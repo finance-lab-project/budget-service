@@ -1,0 +1,4 @@
+# Preserve deliberately malformed JSON and duplicate-header HTTP fixtures.
+fixtures/api-v1/raw/* -text
+# HTTP framing deliberately ends an empty-body request with a blank CRLF line.
+fixtures/api-v1/raw/*.http whitespace=cr-at-eol,-blank-at-eof

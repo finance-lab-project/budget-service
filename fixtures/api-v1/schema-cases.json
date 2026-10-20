@@ -1,0 +1,4861 @@
+[
+  {
+    "id": "put-null-RUB",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "PutBudget",
+    "valid": true,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    }
+  },
+  {
+    "id": "put-zero-RUB",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "PutBudget",
+    "valid": true,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": {
+        "amount": "0",
+        "currency": "RUB"
+      },
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    }
+  },
+  {
+    "id": "budget-RUB",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Budget",
+    "valid": true,
+    "instance": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    }
+  },
+  {
+    "id": "put-null-USD",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "PutBudget",
+    "valid": true,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "USD",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    }
+  },
+  {
+    "id": "put-zero-USD",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "PutBudget",
+    "valid": true,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "USD",
+      "income": {
+        "amount": "0",
+        "currency": "USD"
+      },
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    }
+  },
+  {
+    "id": "budget-USD",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Budget",
+    "valid": true,
+    "instance": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "USD",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "USD"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "USD"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "USD"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "USD"
+        }
+      }
+    }
+  },
+  {
+    "id": "put-null-EUR",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "PutBudget",
+    "valid": true,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "EUR",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    }
+  },
+  {
+    "id": "put-zero-EUR",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "PutBudget",
+    "valid": true,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "EUR",
+      "income": {
+        "amount": "0",
+        "currency": "EUR"
+      },
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    }
+  },
+  {
+    "id": "budget-EUR",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Budget",
+    "valid": true,
+    "instance": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "EUR",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "EUR"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "EUR"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "EUR"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "EUR"
+        }
+      }
+    }
+  },
+  {
+    "id": "source-0",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "SourceAmount",
+    "valid": true,
+    "instance": "0"
+  },
+  {
+    "id": "source-0.000001",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "SourceAmount",
+    "valid": true,
+    "instance": "0.000001"
+  },
+  {
+    "id": "source-0.1",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "SourceAmount",
+    "valid": true,
+    "instance": "0.1"
+  },
+  {
+    "id": "source-0.2",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "SourceAmount",
+    "valid": true,
+    "instance": "0.2"
+  },
+  {
+    "id": "source-0.3",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "SourceAmount",
+    "valid": true,
+    "instance": "0.3"
+  },
+  {
+    "id": "source-999999999999999999.999999",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "SourceAmount",
+    "valid": true,
+    "instance": "999999999999999999.999999"
+  },
+  {
+    "id": "bad-amount-0",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-1",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "00",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-2",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "01",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-3",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "+1",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-4",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "-1",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-5",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "-0",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-6",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": ".5",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-7",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "1.",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-8",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "1.0",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-9",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "1.230",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-10",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "1e3",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-11",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": " 1",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-12",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "1 ",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-13",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "1\n",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-14",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "\u0661",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-15",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "0.0000001",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-amount-16",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": "1000000000000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "amount-type-0",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": 1,
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "amount-type-1",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": 1.2,
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "amount-type-2",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": true,
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "amount-type-3",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": null,
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "amount-type-4",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": {},
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "amount-type-5",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "SourceAmount",
+    "valid": false,
+    "instance": [],
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "month-0001-01",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Month",
+    "valid": true,
+    "instance": "0001-01"
+  },
+  {
+    "id": "month-2027-01",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Month",
+    "valid": true,
+    "instance": "2027-01"
+  },
+  {
+    "id": "month-9999-12",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Month",
+    "valid": true,
+    "instance": "9999-12"
+  },
+  {
+    "id": "bad-month-0",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Month",
+    "valid": false,
+    "instance": "0000-01",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-month-1",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Month",
+    "valid": false,
+    "instance": "2027-00",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-month-2",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Month",
+    "valid": false,
+    "instance": "2027-13",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-month-3",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Month",
+    "valid": false,
+    "instance": "2027-1",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-month-4",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Month",
+    "valid": false,
+    "instance": "\uff12\uff10\uff12\uff17-01",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-month-5",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Month",
+    "valid": false,
+    "instance": "2027-01\n",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-month-6",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Month",
+    "valid": false,
+    "instance": " 2027-01",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-month-7",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Month",
+    "valid": false,
+    "instance": "2027-01x",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-1",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "1"
+  },
+  {
+    "id": "revision-9",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9"
+  },
+  {
+    "id": "revision-999999999999999999",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "999999999999999999"
+  },
+  {
+    "id": "revision-9223372036854775807",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372036854775807"
+  },
+  {
+    "id": "revision-below-prefix-0",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "8999999999999999999"
+  },
+  {
+    "id": "revision-below-prefix-1",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9199999999999999999"
+  },
+  {
+    "id": "revision-above-prefix-1",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9300000000000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-2",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9219999999999999999"
+  },
+  {
+    "id": "revision-above-prefix-2",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9230000000000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-3",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9222999999999999999"
+  },
+  {
+    "id": "revision-above-prefix-3",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9224000000000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-4",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223299999999999999"
+  },
+  {
+    "id": "revision-above-prefix-4",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223400000000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-5",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223369999999999999"
+  },
+  {
+    "id": "revision-above-prefix-5",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223380000000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-6",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223371999999999999"
+  },
+  {
+    "id": "revision-above-prefix-6",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223373000000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-above-prefix-7",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372100000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-8",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372029999999999"
+  },
+  {
+    "id": "revision-above-prefix-8",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372040000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-9",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372035999999999"
+  },
+  {
+    "id": "revision-above-prefix-9",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372037000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-10",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372036799999999"
+  },
+  {
+    "id": "revision-above-prefix-10",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036900000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-11",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372036849999999"
+  },
+  {
+    "id": "revision-above-prefix-11",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036860000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-12",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372036853999999"
+  },
+  {
+    "id": "revision-above-prefix-12",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036855000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-13",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372036854699999"
+  },
+  {
+    "id": "revision-above-prefix-13",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036854800000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-14",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372036854769999"
+  },
+  {
+    "id": "revision-above-prefix-14",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036854780000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-15",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372036854774999"
+  },
+  {
+    "id": "revision-above-prefix-15",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036854776000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-16",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372036854775799"
+  },
+  {
+    "id": "revision-above-prefix-16",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036854775900",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-above-prefix-17",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036854775810",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-below-prefix-18",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Revision",
+    "valid": true,
+    "instance": "9223372036854775806"
+  },
+  {
+    "id": "revision-above-prefix-18",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036854775808",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-revision-0",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "0",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-revision-1",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "01",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-revision-2",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "-1",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-revision-3",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "+1",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-revision-4",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "1.0",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-revision-5",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "1e0",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-revision-6",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "1\n",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-revision-7",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9223372036854775808",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "bad-revision-8",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": "9999999999999999999",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "revision-number",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Revision",
+    "valid": false,
+    "instance": 1,
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "missing-expectedVersion",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "missing-currency",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "missing-income",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "missing-spending",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "missing-investments",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      }
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "unknown-owner",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "owner": null
+    },
+    "expectedError": {
+      "keyword": "additionalProperties",
+      "path": []
+    }
+  },
+  {
+    "id": "unknown-month",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "month": null
+    },
+    "expectedError": {
+      "keyword": "additionalProperties",
+      "path": []
+    }
+  },
+  {
+    "id": "unknown-totals",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": null
+    },
+    "expectedError": {
+      "keyword": "additionalProperties",
+      "path": []
+    }
+  },
+  {
+    "id": "unknown-formatVersion",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "formatVersion": null
+    },
+    "expectedError": {
+      "keyword": "additionalProperties",
+      "path": []
+    }
+  },
+  {
+    "id": "missing-category-groceries",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-restaurants",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-utilities",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-transport",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-household",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-health",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-personal-care",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-clothing",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-subscriptions",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-education",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-tech",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-culture",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-entertainment",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-gifts",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "missing-category-travel",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "unknown-category",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null,
+        "other": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "additionalProperties",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "number-income",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": 0,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "anyOf",
+      "path": [
+        "income"
+      ]
+    }
+  },
+  {
+    "id": "number-investments",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": 0
+    },
+    "expectedError": {
+      "keyword": "anyOf",
+      "path": [
+        "investments"
+      ]
+    }
+  },
+  {
+    "id": "boolean-category",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": null,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": false,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "anyOf",
+      "path": [
+        "spending",
+        "groceries"
+      ]
+    }
+  },
+  {
+    "id": "missing-money-amount",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Money",
+    "valid": false,
+    "instance": {
+      "currency": "RUB"
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "missing-money-currency",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Money",
+    "valid": false,
+    "instance": {
+      "amount": "0"
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "unknown-money-field",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Money",
+    "valid": false,
+    "instance": {
+      "amount": "0",
+      "currency": "RUB",
+      "extra": null
+    },
+    "expectedError": {
+      "keyword": "additionalProperties",
+      "path": []
+    }
+  },
+  {
+    "id": "unsupported-currency",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Currency",
+    "valid": false,
+    "instance": "GBP",
+    "expectedError": {
+      "keyword": "enum",
+      "path": []
+    }
+  },
+  {
+    "id": "lowercase-currency",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Currency",
+    "valid": false,
+    "instance": "rub",
+    "expectedError": {
+      "keyword": "enum",
+      "path": []
+    }
+  },
+  {
+    "id": "null-totals",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Budget",
+    "valid": false,
+    "instance": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": null
+    },
+    "expectedError": {
+      "keyword": "type",
+      "path": [
+        "totals"
+      ]
+    }
+  },
+  {
+    "id": "null-total-income",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Budget",
+    "valid": false,
+    "instance": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": null,
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "expectedError": {
+      "keyword": "type",
+      "path": [
+        "totals",
+        "income"
+      ]
+    }
+  },
+  {
+    "id": "null-total-spending",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Budget",
+    "valid": false,
+    "instance": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": null,
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "expectedError": {
+      "keyword": "type",
+      "path": [
+        "totals",
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "null-total-investments",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Budget",
+    "valid": false,
+    "instance": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": null,
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "expectedError": {
+      "keyword": "type",
+      "path": [
+        "totals",
+        "investments"
+      ]
+    }
+  },
+  {
+    "id": "null-total-remaining",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Budget",
+    "valid": false,
+    "instance": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": null
+      }
+    },
+    "expectedError": {
+      "keyword": "type",
+      "path": [
+        "totals",
+        "remaining"
+      ]
+    }
+  },
+  {
+    "id": "large-total",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "TotalAmount",
+    "valid": true,
+    "instance": "14999999999999999999.999985"
+  },
+  {
+    "id": "negative-remaining",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "RemainingAmount",
+    "valid": true,
+    "instance": "-15999999999999999999.999984"
+  },
+  {
+    "id": "TotalAmount-over-limit",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "TotalAmount",
+    "valid": false,
+    "instance": "100000000000000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "TotalAmount-trailing-zero",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "TotalAmount",
+    "valid": false,
+    "instance": "1.00",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "RemainingAmount-over-limit",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "RemainingAmount",
+    "valid": false,
+    "instance": "100000000000000000000",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "RemainingAmount-trailing-zero",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "RemainingAmount",
+    "valid": false,
+    "instance": "1.00",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "negative-other-total",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "TotalAmount",
+    "valid": false,
+    "instance": "-1",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "negative-zero",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "RemainingAmount",
+    "valid": false,
+    "instance": "-0",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "negative-small",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "RemainingAmount",
+    "valid": true,
+    "instance": "-0.000001"
+  },
+  {
+    "id": "IdempotencyKey-valid-0",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": true,
+    "instance": "x"
+  },
+  {
+    "id": "IdempotencyKey-valid-1",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": true,
+    "instance": "A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-"
+  },
+  {
+    "id": "IdempotencyKey-bad-0",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": false,
+    "instance": "",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "IdempotencyKey-bad-1",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": false,
+    "instance": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "IdempotencyKey-bad-2",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": false,
+    "instance": "a,b",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "IdempotencyKey-bad-3",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": false,
+    "instance": "\"a\"",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "IdempotencyKey-bad-4",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": false,
+    "instance": "a b",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "IdempotencyKey-bad-5",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": false,
+    "instance": " a",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "IdempotencyKey-bad-6",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": false,
+    "instance": "a ",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "IdempotencyKey-bad-7",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": false,
+    "instance": "a\n",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "IdempotencyKey-bad-8",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": false,
+    "instance": "\u00e9",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "Generation-valid-0",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Generation",
+    "valid": true,
+    "instance": "x"
+  },
+  {
+    "id": "Generation-valid-1",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "Generation",
+    "valid": true,
+    "instance": "A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-A_9-"
+  },
+  {
+    "id": "Generation-bad-0",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": "",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "Generation-bad-1",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "Generation-bad-2",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": "a,b",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "Generation-bad-3",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": "\"a\"",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "Generation-bad-4",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": "a b",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "Generation-bad-5",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": " a",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "Generation-bad-6",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": "a ",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "Generation-bad-7",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": "a\n",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "Generation-bad-8",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": "\u00e9",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "key-punctuation",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "IdempotencyKey",
+    "valid": true,
+    "instance": "a.b:c"
+  },
+  {
+    "id": "generation-punctuation",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "Generation",
+    "valid": false,
+    "instance": "a.b:c",
+    "expectedError": {
+      "keyword": "pattern",
+      "path": []
+    }
+  },
+  {
+    "id": "replay-true",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "ReplayMarker",
+    "valid": true,
+    "instance": "true"
+  },
+  {
+    "id": "replay-false",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "ReplayMarker",
+    "valid": true,
+    "instance": "false"
+  },
+  {
+    "id": "replay-boolean",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "ReplayMarker",
+    "valid": false,
+    "instance": true,
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "problem-INVALID_REQUEST",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InvalidRequestProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request",
+      "title": "Invalid request",
+      "status": 400,
+      "code": "INVALID_REQUEST"
+    }
+  },
+  {
+    "id": "problem-INVALID_REQUEST-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InvalidRequestProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Invalid request",
+      "status": 400,
+      "code": "INVALID_REQUEST"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-INVALID_REQUEST-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InvalidRequestProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request",
+      "title": "wrong",
+      "status": 400,
+      "code": "INVALID_REQUEST"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-INVALID_REQUEST-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InvalidRequestProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request",
+      "title": "Invalid request",
+      "status": 999,
+      "code": "INVALID_REQUEST"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-INVALID_REQUEST-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InvalidRequestProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request",
+      "title": "Invalid request",
+      "status": 400,
+      "code": "wrong"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-AUTHENTICATION_REQUIRED",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "AuthenticationRequiredProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    }
+  },
+  {
+    "id": "problem-AUTHENTICATION_REQUIRED-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "AuthenticationRequiredProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-AUTHENTICATION_REQUIRED-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "AuthenticationRequiredProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "wrong",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-AUTHENTICATION_REQUIRED-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "AuthenticationRequiredProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 999,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-AUTHENTICATION_REQUIRED-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "AuthenticationRequiredProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "wrong"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-FORBIDDEN",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ForbiddenProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "Forbidden",
+      "status": 403,
+      "code": "FORBIDDEN"
+    }
+  },
+  {
+    "id": "problem-FORBIDDEN-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ForbiddenProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Forbidden",
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-FORBIDDEN-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ForbiddenProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "wrong",
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-FORBIDDEN-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ForbiddenProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "Forbidden",
+      "status": 999,
+      "code": "FORBIDDEN"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-FORBIDDEN-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ForbiddenProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "Forbidden",
+      "status": 403,
+      "code": "wrong"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_NOT_FOUND",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetNotFoundProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found",
+      "title": "Budget not found",
+      "status": 404,
+      "code": "BUDGET_NOT_FOUND",
+      "month": "2027-01"
+    }
+  },
+  {
+    "id": "problem-BUDGET_NOT_FOUND-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetNotFoundProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Budget not found",
+      "status": 404,
+      "code": "BUDGET_NOT_FOUND",
+      "month": "2027-01"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_NOT_FOUND-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetNotFoundProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found",
+      "title": "wrong",
+      "status": 404,
+      "code": "BUDGET_NOT_FOUND",
+      "month": "2027-01"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_NOT_FOUND-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetNotFoundProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found",
+      "title": "Budget not found",
+      "status": 999,
+      "code": "BUDGET_NOT_FOUND",
+      "month": "2027-01"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_NOT_FOUND-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetNotFoundProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found",
+      "title": "Budget not found",
+      "status": 404,
+      "code": "wrong",
+      "month": "2027-01"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_NOT_FOUND-missing-month",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetNotFoundProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found",
+      "title": "Budget not found",
+      "status": 404,
+      "code": "BUDGET_NOT_FOUND"
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_CONFLICT",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionConflictProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict",
+      "title": "Budget version conflict",
+      "status": 409,
+      "code": "BUDGET_VERSION_CONFLICT",
+      "currentBudget": null
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_CONFLICT-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionConflictProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Budget version conflict",
+      "status": 409,
+      "code": "BUDGET_VERSION_CONFLICT",
+      "currentBudget": null
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_CONFLICT-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionConflictProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict",
+      "title": "wrong",
+      "status": 409,
+      "code": "BUDGET_VERSION_CONFLICT",
+      "currentBudget": null
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_CONFLICT-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionConflictProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict",
+      "title": "Budget version conflict",
+      "status": 999,
+      "code": "BUDGET_VERSION_CONFLICT",
+      "currentBudget": null
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_CONFLICT-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionConflictProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict",
+      "title": "Budget version conflict",
+      "status": 409,
+      "code": "wrong",
+      "currentBudget": null
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_CONFLICT-missing-currentBudget",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionConflictProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict",
+      "title": "Budget version conflict",
+      "status": 409,
+      "code": "BUDGET_VERSION_CONFLICT"
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "problem-IDEMPOTENCY_KEY_REUSED",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "IdempotencyKeyReusedProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-idempotency-key-reused",
+      "title": "Idempotency key reused",
+      "status": 409,
+      "code": "IDEMPOTENCY_KEY_REUSED"
+    }
+  },
+  {
+    "id": "problem-IDEMPOTENCY_KEY_REUSED-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "IdempotencyKeyReusedProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Idempotency key reused",
+      "status": 409,
+      "code": "IDEMPOTENCY_KEY_REUSED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-IDEMPOTENCY_KEY_REUSED-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "IdempotencyKeyReusedProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-idempotency-key-reused",
+      "title": "wrong",
+      "status": 409,
+      "code": "IDEMPOTENCY_KEY_REUSED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-IDEMPOTENCY_KEY_REUSED-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "IdempotencyKeyReusedProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-idempotency-key-reused",
+      "title": "Idempotency key reused",
+      "status": 999,
+      "code": "IDEMPOTENCY_KEY_REUSED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-IDEMPOTENCY_KEY_REUSED-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "IdempotencyKeyReusedProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-idempotency-key-reused",
+      "title": "Idempotency key reused",
+      "status": 409,
+      "code": "wrong"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-SAVE_RESULT_UNAVAILABLE",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "SaveResultUnavailableProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-save-result-unavailable",
+      "title": "Save result unavailable",
+      "status": 409,
+      "code": "SAVE_RESULT_UNAVAILABLE",
+      "saveOutcome": "unknown"
+    }
+  },
+  {
+    "id": "problem-SAVE_RESULT_UNAVAILABLE-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "SaveResultUnavailableProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Save result unavailable",
+      "status": 409,
+      "code": "SAVE_RESULT_UNAVAILABLE",
+      "saveOutcome": "unknown"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-SAVE_RESULT_UNAVAILABLE-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "SaveResultUnavailableProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-save-result-unavailable",
+      "title": "wrong",
+      "status": 409,
+      "code": "SAVE_RESULT_UNAVAILABLE",
+      "saveOutcome": "unknown"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-SAVE_RESULT_UNAVAILABLE-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "SaveResultUnavailableProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-save-result-unavailable",
+      "title": "Save result unavailable",
+      "status": 999,
+      "code": "SAVE_RESULT_UNAVAILABLE",
+      "saveOutcome": "unknown"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-SAVE_RESULT_UNAVAILABLE-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "SaveResultUnavailableProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-save-result-unavailable",
+      "title": "Save result unavailable",
+      "status": 409,
+      "code": "wrong",
+      "saveOutcome": "unknown"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-SAVE_RESULT_UNAVAILABLE-missing-saveOutcome",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "SaveResultUnavailableProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-save-result-unavailable",
+      "title": "Save result unavailable",
+      "status": 409,
+      "code": "SAVE_RESULT_UNAVAILABLE"
+    },
+    "expectedError": {
+      "keyword": "required",
+      "path": []
+    }
+  },
+  {
+    "id": "problem-BUDGET_RECOVERY_REQUIRED",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetRecoveryRequiredProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-recovery-required",
+      "title": "Budget recovery required",
+      "status": 409,
+      "code": "BUDGET_RECOVERY_REQUIRED"
+    }
+  },
+  {
+    "id": "problem-BUDGET_RECOVERY_REQUIRED-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetRecoveryRequiredProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Budget recovery required",
+      "status": 409,
+      "code": "BUDGET_RECOVERY_REQUIRED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_RECOVERY_REQUIRED-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetRecoveryRequiredProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-recovery-required",
+      "title": "wrong",
+      "status": 409,
+      "code": "BUDGET_RECOVERY_REQUIRED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_RECOVERY_REQUIRED-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetRecoveryRequiredProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-recovery-required",
+      "title": "Budget recovery required",
+      "status": 999,
+      "code": "BUDGET_RECOVERY_REQUIRED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_RECOVERY_REQUIRED-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetRecoveryRequiredProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-recovery-required",
+      "title": "Budget recovery required",
+      "status": 409,
+      "code": "wrong"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_EXHAUSTED",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionExhaustedProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-exhausted",
+      "title": "Budget version exhausted",
+      "status": 409,
+      "code": "BUDGET_VERSION_EXHAUSTED"
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_EXHAUSTED-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionExhaustedProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Budget version exhausted",
+      "status": 409,
+      "code": "BUDGET_VERSION_EXHAUSTED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_EXHAUSTED-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionExhaustedProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-exhausted",
+      "title": "wrong",
+      "status": 409,
+      "code": "BUDGET_VERSION_EXHAUSTED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_EXHAUSTED-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionExhaustedProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-exhausted",
+      "title": "Budget version exhausted",
+      "status": 999,
+      "code": "BUDGET_VERSION_EXHAUSTED"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-BUDGET_VERSION_EXHAUSTED-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionExhaustedProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-exhausted",
+      "title": "Budget version exhausted",
+      "status": 409,
+      "code": "wrong"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-UNSUPPORTED_MEDIA_TYPE",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "UnsupportedMediaTypeProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-unsupported-media-type",
+      "title": "Unsupported media type",
+      "status": 415,
+      "code": "UNSUPPORTED_MEDIA_TYPE"
+    }
+  },
+  {
+    "id": "problem-UNSUPPORTED_MEDIA_TYPE-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "UnsupportedMediaTypeProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Unsupported media type",
+      "status": 415,
+      "code": "UNSUPPORTED_MEDIA_TYPE"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-UNSUPPORTED_MEDIA_TYPE-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "UnsupportedMediaTypeProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-unsupported-media-type",
+      "title": "wrong",
+      "status": 415,
+      "code": "UNSUPPORTED_MEDIA_TYPE"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-UNSUPPORTED_MEDIA_TYPE-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "UnsupportedMediaTypeProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-unsupported-media-type",
+      "title": "Unsupported media type",
+      "status": 999,
+      "code": "UNSUPPORTED_MEDIA_TYPE"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-UNSUPPORTED_MEDIA_TYPE-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "UnsupportedMediaTypeProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-unsupported-media-type",
+      "title": "Unsupported media type",
+      "status": 415,
+      "code": "wrong"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-INTERNAL_ERROR",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InternalErrorProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error",
+      "title": "Internal error",
+      "status": 500,
+      "code": "INTERNAL_ERROR"
+    }
+  },
+  {
+    "id": "problem-INTERNAL_ERROR-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InternalErrorProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Internal error",
+      "status": 500,
+      "code": "INTERNAL_ERROR"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-INTERNAL_ERROR-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InternalErrorProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error",
+      "title": "wrong",
+      "status": 500,
+      "code": "INTERNAL_ERROR"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-INTERNAL_ERROR-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InternalErrorProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error",
+      "title": "Internal error",
+      "status": 999,
+      "code": "INTERNAL_ERROR"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-INTERNAL_ERROR-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InternalErrorProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error",
+      "title": "Internal error",
+      "status": 500,
+      "code": "wrong"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "problem-SERVICE_UNAVAILABLE",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ServiceUnavailableProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-service-unavailable",
+      "title": "Service unavailable",
+      "status": 503,
+      "code": "SERVICE_UNAVAILABLE"
+    }
+  },
+  {
+    "id": "problem-SERVICE_UNAVAILABLE-wrong-type",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ServiceUnavailableProblem",
+    "valid": false,
+    "instance": {
+      "type": "wrong",
+      "title": "Service unavailable",
+      "status": 503,
+      "code": "SERVICE_UNAVAILABLE"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "type"
+      ]
+    }
+  },
+  {
+    "id": "problem-SERVICE_UNAVAILABLE-wrong-title",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ServiceUnavailableProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-service-unavailable",
+      "title": "wrong",
+      "status": 503,
+      "code": "SERVICE_UNAVAILABLE"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "title"
+      ]
+    }
+  },
+  {
+    "id": "problem-SERVICE_UNAVAILABLE-wrong-status",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ServiceUnavailableProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-service-unavailable",
+      "title": "Service unavailable",
+      "status": 999,
+      "code": "SERVICE_UNAVAILABLE"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "status"
+      ]
+    }
+  },
+  {
+    "id": "problem-SERVICE_UNAVAILABLE-wrong-code",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "ServiceUnavailableProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-service-unavailable",
+      "title": "Service unavailable",
+      "status": 503,
+      "code": "wrong"
+    },
+    "expectedError": {
+      "keyword": "const",
+      "path": [
+        "code"
+      ]
+    }
+  },
+  {
+    "id": "conflict-current-budget",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "BudgetVersionConflictProblem",
+    "valid": true,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict",
+      "title": "Budget version conflict",
+      "status": 409,
+      "code": "BUDGET_VERSION_CONFLICT",
+      "currentBudget": {
+        "month": "2027-01",
+        "version": "1",
+        "currency": "RUB",
+        "income": null,
+        "spending": {
+          "groceries": null,
+          "restaurants": null,
+          "utilities": null,
+          "transport": null,
+          "household": null,
+          "health": null,
+          "personal-care": null,
+          "clothing": null,
+          "subscriptions": null,
+          "education": null,
+          "tech": null,
+          "culture": null,
+          "entertainment": null,
+          "gifts": null,
+          "travel": null
+        },
+        "investments": null,
+        "totals": {
+          "income": {
+            "amount": "0",
+            "currency": "RUB"
+          },
+          "spending": {
+            "amount": "0",
+            "currency": "RUB"
+          },
+          "investments": {
+            "amount": "0",
+            "currency": "RUB"
+          },
+          "remaining": {
+            "amount": "0",
+            "currency": "RUB"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "producer-unknown-problem-extension",
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "schema": "InvalidRequestProblem",
+    "valid": false,
+    "instance": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request",
+      "title": "Invalid request",
+      "status": 400,
+      "code": "INVALID_REQUEST",
+      "undocumented": true
+    },
+    "expectedError": {
+      "keyword": "unevaluatedProperties",
+      "path": []
+    }
+  },
+  {
+    "id": "put-replacement",
+    "class": "schema",
+    "ac": [
+      "AC03"
+    ],
+    "schema": "PutBudget",
+    "valid": true,
+    "instance": {
+      "expectedVersion": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    }
+  },
+  {
+    "id": "wrong-root-value-0",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": [],
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "type",
+      "path": [
+        "spending"
+      ]
+    }
+  },
+  {
+    "id": "wrong-root-value-1",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": "1",
+      "currency": 1,
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "type",
+      "path": [
+        "currency"
+      ]
+    }
+  },
+  {
+    "id": "wrong-root-value-2",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": true,
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "anyOf",
+      "path": [
+        "expectedVersion"
+      ]
+    }
+  },
+  {
+    "id": "wrong-root-value-3",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": {
+      "expectedVersion": "9223372036854775808",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null
+    },
+    "expectedError": {
+      "keyword": "anyOf",
+      "path": [
+        "expectedVersion"
+      ]
+    }
+  },
+  {
+    "id": "wrong-root-type-0",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": null,
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "wrong-root-type-1",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": [],
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "wrong-root-type-2",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": true,
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  },
+  {
+    "id": "wrong-root-type-3",
+    "class": "schema",
+    "ac": [
+      "AC04"
+    ],
+    "schema": "PutBudget",
+    "valid": false,
+    "instance": "{}",
+    "expectedError": {
+      "keyword": "type",
+      "path": []
+    }
+  }
+]

@@ -1,0 +1,253 @@
+[
+  {
+    "id": "malformed-json",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/malformed-json.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "cdd1c5187ef26c6328107f09520cd7d5e15ce5d6b795fe80cfc4323ca59ba8a6"
+  },
+  {
+    "id": "trailing-json",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/trailing-json.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "a228fd01efbb62934491a8db101875fb20cdd48fb25e907ee46f2e76a9bff655"
+  },
+  {
+    "id": "duplicate-root-literal",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-root-literal.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "8c6e015aa8e29f4513e0fb34e56181657711285081921422958175bd3bdbb9f8"
+  },
+  {
+    "id": "duplicate-spending-literal",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-spending-literal.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "0b8ebb85c5392ecbdfcb648eccbdd07102c161d67d67fe1bee69273b29c2a715"
+  },
+  {
+    "id": "duplicate-money-income-literal",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-money-income-literal.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "a89a67333fe94c267968aa68c86a272b9c27f3ea3e569be89ae057eb1d655fbb"
+  },
+  {
+    "id": "duplicate-money-investments-literal",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-money-investments-literal.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "68c60415f5e9127b0c8805d4b45d0abcd202619969e3ecf32461cddea145c337"
+  },
+  {
+    "id": "duplicate-money-groceries-literal",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-money-groceries-literal.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "51312486529b3ff290534246e26c6e73ba785dd2a03030c64cb952a0bf78bef5"
+  },
+  {
+    "id": "duplicate-root-escaped",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-root-escaped.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "64713b6bfc3299bdbc0d2c55e3e44add71a4885f004426a1ad4c38d3e2694617"
+  },
+  {
+    "id": "duplicate-spending-escaped",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-spending-escaped.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "f19b9b74b06eb0b0aaba4d1067265a3eb4b1d8e79cad3db98ce2c1fe765e1d9a"
+  },
+  {
+    "id": "duplicate-money-income-escaped",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-money-income-escaped.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "9c811aa40ed4f83f8bde60a27800d9c43fd0e5ed5b9c0c68d135f9b783085140"
+  },
+  {
+    "id": "duplicate-money-investments-escaped",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-money-investments-escaped.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "95c7cb04e8a4b5970eb86cfc0231cacc180d0c3c27d3d848eb175df184480245"
+  },
+  {
+    "id": "duplicate-money-groceries-escaped",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-money-groceries-escaped.json.txt",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "1f23a4457c72a7ff43e198e51e850bdd6e46f67ad8e5eaa3fca97196087a286c"
+  },
+  {
+    "id": "duplicate-idempotency-key",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-idempotency-key.http",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "74ba47d62ad7c05e97612984a9ba8931c2589dd882a0599e6f1191145476e4dd"
+  },
+  {
+    "id": "duplicate-budget-generation",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-budget-generation.http",
+    "expected": "400 INVALID_REQUEST",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "3c991531bf4c33ef20318fcef9407110f21fa2652596a9294f5c067d085e35d2"
+  },
+  {
+    "id": "duplicate-authorization",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05"
+    ],
+    "path": "raw/duplicate-authorization.http",
+    "expected": "401 AUTHENTICATION_REQUIRED",
+    "verification": "NOT RUN: requires future Go and BFF boundary tests",
+    "precondition": "Future harness supplies an otherwise valid authenticated request/current generation; raw JSON is the body. HTTP samples replace only SYNTHETIC_NOT_A_TOKEN with valid test credentials. Do not normalize duplicate keys/headers.",
+    "sha256": "842a0eec6cd02dd2a2439408c62742e48d7a2514c9b6dc3d96054150851d316f"
+  },
+  {
+    "id": "upstream-duplicate-totals-literal",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05",
+      "AC10"
+    ],
+    "path": "raw/upstream-duplicate-totals-literal.json.txt",
+    "expected": "502 UPSTREAM_ERROR; forwarded PUT outcome unknown unless established",
+    "precondition": "Raw Go response body received by BFF; duplicate rejection must precede lossy parsing.",
+    "verification": "NOT RUN: future BFF upstream boundary tests",
+    "sha256": "c91d31901a947c0058519a6b0caeeaef0f2da558f10d5ef15cd1b6b613d8310d"
+  },
+  {
+    "id": "upstream-duplicate-total-money-literal",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05",
+      "AC10"
+    ],
+    "path": "raw/upstream-duplicate-total-money-literal.json.txt",
+    "expected": "502 UPSTREAM_ERROR; forwarded PUT outcome unknown unless established",
+    "precondition": "Raw Go response body received by BFF; duplicate rejection must precede lossy parsing.",
+    "verification": "NOT RUN: future BFF upstream boundary tests",
+    "sha256": "aff05a4bbf9652bea536e7899b5722df5ccc2bdc0895050d66878e7be534a100"
+  },
+  {
+    "id": "upstream-duplicate-totals-escaped",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05",
+      "AC10"
+    ],
+    "path": "raw/upstream-duplicate-totals-escaped.json.txt",
+    "expected": "502 UPSTREAM_ERROR; forwarded PUT outcome unknown unless established",
+    "precondition": "Raw Go response body received by BFF; duplicate rejection must precede lossy parsing.",
+    "verification": "NOT RUN: future BFF upstream boundary tests",
+    "sha256": "f7ba250b0620cc19de82e145fcf8c1fb526a790d01433d170bee2d1b8f0a2517"
+  },
+  {
+    "id": "upstream-duplicate-total-money-escaped",
+    "class": "raw transport",
+    "ac": [
+      "AC04",
+      "AC05",
+      "AC10"
+    ],
+    "path": "raw/upstream-duplicate-total-money-escaped.json.txt",
+    "expected": "502 UPSTREAM_ERROR; forwarded PUT outcome unknown unless established",
+    "precondition": "Raw Go response body received by BFF; duplicate rejection must precede lossy parsing.",
+    "verification": "NOT RUN: future BFF upstream boundary tests",
+    "sha256": "5ff2dc210b25ddcaa6ca645cb614854034b4d627e562dde8476085d7c5286218"
+  }
+]

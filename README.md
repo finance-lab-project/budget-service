@@ -26,6 +26,19 @@ rule restricts its importers to this repository's package tree.
 The package uses only the Go standard library.
 There is no executable service, HTTP layer, database adapter or deployment setup.
 
+## Go Budget v1 contract
+
+The initial [OpenAPI 3.1.1 contract](api/openapi.yaml) defines monthly GET/PUT
+wire shapes. The [semantic companion](docs/api-v1-contract.md) records ownership,
+exact values, problems, replay/recovery rules and BFF mapping.
+[Synthetic fixtures](fixtures/api-v1/README.md) distinguish executable schema
+checks from future raw-transport, domain and state/security conformance.
+
+For pinned local setup, the shared local/CI validation command, actual results
+and pending acceptance, see [verification evidence](docs/evidence/issue-3/verification.md).
+Contract validation is not evidence of a running HTTP, authentication or
+persistence implementation.
+
 ## Domain behavior
 
 - `ParseMoney(amount, currency)` accepts canonical nonnegative decimal strings,

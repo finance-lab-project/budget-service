@@ -1,0 +1,626 @@
+[
+  {
+    "id": "unplanned-RUB",
+    "class": "domain",
+    "ac": [
+      "AC03"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "unplanned-USD",
+    "class": "domain",
+    "ac": [
+      "AC03"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "USD",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "USD"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "USD"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "USD"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "USD"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "unplanned-EUR",
+    "class": "domain",
+    "ac": [
+      "AC03"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "EUR",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "EUR"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "EUR"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "EUR"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "EUR"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "exact-tenths",
+    "class": "domain",
+    "ac": [
+      "AC03"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": {
+        "amount": "1",
+        "currency": "RUB"
+      },
+      "spending": {
+        "groceries": {
+          "amount": "0.1",
+          "currency": "RUB"
+        },
+        "restaurants": {
+          "amount": "0.2",
+          "currency": "RUB"
+        },
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "1",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0.3",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0.7",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "maximum-aggregate-negative",
+    "class": "domain",
+    "ac": [
+      "AC03"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "restaurants": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "utilities": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "transport": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "household": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "health": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "personal-care": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "clothing": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "subscriptions": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "education": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "tech": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "culture": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "entertainment": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "gifts": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "travel": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        }
+      },
+      "investments": {
+        "amount": "999999999999999999.999999",
+        "currency": "RUB"
+      },
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "14999999999999999999.999985",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "999999999999999999.999999",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "-15999999999999999999.999984",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "currency-mismatch-income",
+    "class": "domain",
+    "ac": [
+      "AC04"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": {
+        "amount": "0",
+        "currency": "USD"
+      },
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "currency-mismatch"
+  },
+  {
+    "id": "currency-mismatch-investments",
+    "class": "domain",
+    "ac": [
+      "AC04"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": {
+        "amount": "0",
+        "currency": "USD"
+      },
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "currency-mismatch"
+  },
+  {
+    "id": "currency-mismatch-groceries",
+    "class": "domain",
+    "ac": [
+      "AC04"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": {
+          "amount": "0",
+          "currency": "USD"
+        },
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "currency-mismatch"
+  },
+  {
+    "id": "currency-mismatch-total",
+    "class": "domain",
+    "ac": [
+      "AC04"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "USD"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "currency-mismatch"
+  },
+  {
+    "id": "incorrect-total",
+    "class": "domain",
+    "ac": [
+      "AC03"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "1",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "totals-mismatch"
+  },
+  {
+    "id": "planned-zero",
+    "class": "domain",
+    "ac": [
+      "AC03"
+    ],
+    "budget": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": {
+        "amount": "0",
+        "currency": "RUB"
+      },
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": true
+  }
+]

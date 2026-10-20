@@ -1,0 +1,5 @@
+GET /api/v1/budgets/2027-01 HTTP/1.1
+Host: budget.example.invalid
+Authorization: Bearer SYNTHETIC_NOT_A_TOKEN
+authorization: Bearer SYNTHETIC_NOT_A_TOKEN
+
