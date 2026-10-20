@@ -1,8 +1,10 @@
 # Budget Service
 
-Finance Lab Budget Service in Go. This is the minimal domain-package baseline
-for [finance-lab #143](https://github.com/anton415/finance-lab/issues/143).
-Domain behavior and behavioral tests are not implemented yet.
+Finance Lab Budget Service in Go. The `internal/budget` package implements
+Money, month validation and exact monthly totals for
+[finance-lab #144](https://github.com/anton415/finance-lab/issues/144), on the
+module baseline established by
+[finance-lab #143](https://github.com/anton415/finance-lab/issues/143).
 
 ## Approved placement and toolchain
 
@@ -21,10 +23,36 @@ adds the package path
 `github.com/finance-lab-project/budget-service/internal/budget`; Go's `internal`
 rule restricts its importers to this repository's package tree.
 
-The package starts with documentation only and no external dependencies.
-Money, month and totals implementation belongs to
-[finance-lab #144](https://github.com/anton415/finance-lab/issues/144) and is deferred.
+The package uses only the Go standard library.
 There is no executable service, HTTP layer, database adapter or deployment setup.
+
+## Domain behavior
+
+- `ParseMoney(amount, currency)` accepts canonical nonnegative decimal strings,
+  up to 18 integer digits and six fractional digits, in explicit RUB, USD or EUR.
+  `Money.Amount()` formats exact values; the default Go `Money{}` is invalid.
+- `ValidateMonth(month)` accepts exactly `YYYY-MM`, years 0001–9999 and months
+  01–12, independently of the current date.
+- `CalculateTotals(MonthlyInput)` requires one supported budget currency and
+  exactly the IDs returned by `SpendingCategoryIDs()`. Income, each spending
+  amount and investments use `*Money`: `nil` means unplanned, while parsed
+  `"0"` means planned zero. All populated amounts must match the budget currency.
+- Totals contain income, spending, investments and remaining. Unplanned amounts
+  contribute zero without changing the source. Remaining is income minus
+  spending minus investments. Errors are distinguishable with `errors.Is`;
+  failed calculations return no valid or partial totals.
+
+Amounts use private `math/big.Int` storage in millionths: `"12.34"` becomes
+`12340000` and formats back to `"12.34"`. The maximum planned amount requires
+24 scaled digits, beyond `int64`. Parsing checks spelling and bounds before
+constructing the integer. No floats, rounding or input normalization are used.
+
+Computed totals have separate construction: remaining can be negative, and
+summing fifteen maximum amounts requires 20 integer digits. These results are
+valid totals but cannot bypass planned-input bounds if reused as input.
+Money exposes no mutable integer storage; formatting reads it and calculations
+allocate independent result storage. Tests exercise shared input values,
+repeated calculations and deliberate internal storage mutation to detect aliasing.
 
 ## Local verification
 
@@ -52,6 +80,9 @@ Expected results:
   `"$(go env GOROOT)/bin/gofmt" -w internal/budget` inside the same subshell.
 - `go list ./...` discovers
   `github.com/finance-lab-project/budget-service/internal/budget`.
-- `go test ./...` succeeds with `[no test files]` for that package. This confirms
-  compilation, with **zero behavioral tests**; it does not verify domain behavior.
+- `go test ./...` runs the domain tests, including strict parsing, month
+  boundaries, all reference totals, currency/category errors and input/result
+  preservation. For one maximum-input boundary test, run
+  `go test ./internal/budget -run 'TestParseMoneyRoundTrip/RUB/999999999999999999' -v`
+  inside the same subshell.
 - `go vet ./...` succeeds with no diagnostics.
