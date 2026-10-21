@@ -1,0 +1,10 @@
+PUT /api/v1/budgets/2027-01 HTTP/1.1
+Host: budget.example.invalid
+Authorization: Bearer SYNTHETIC_NOT_A_TOKEN
+Content-Type: application/json
+Content-Length: 338
+Idempotency-Key: synthetic-key
+Budget-Generation: synthetic_generation_1
+idempotency-key: synthetic-key
+
+{"expectedVersion":null,"currency":"RUB","income":null,"spending":{"groceries":null,"restaurants":null,"utilities":null,"transport":null,"household":null,"health":null,"personal-care":null,"clothing":null,"subscriptions":null,"education":null,"tech":null,"culture":null,"entertainment":null,"gifts":null,"travel":null},"investments":null}

@@ -1,0 +1,453 @@
+[
+  {
+    "id": "create",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Own month absent; valid current generation and unused key; expectedVersion=null.",
+    "when": "PUT the complete validated replacement.",
+    "then": "201, version \"1\", Location, current generation, replay=false. Budget/version/success receipt commit together; acknowledgment follows commit.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "update",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Own month at version \"7\"; matching expectedVersion, currency and current generation; new key.",
+    "when": "PUT changed values.",
+    "then": "200 version \"8\", current generation, replay=false; one atomic commit.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "unchanged-update",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Same as update, but body values equal stored values.",
+    "when": "PUT with a fresh key.",
+    "then": "200 version \"8\"; an accepted replacement increments once even with unchanged values.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "create-again",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Own month already at version \"1\"; fresh key and current generation.",
+    "when": "PUT expectedVersion=null.",
+    "then": "409 BUDGET_VERSION_CONFLICT with complete current own Budget; no budget/version/success-receipt changes.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "stale-version",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Own month at \"9\"; fresh key and current generation.",
+    "when": "PUT expectedVersion=\"8\".",
+    "then": "409 BUDGET_VERSION_CONFLICT with version \"9\" snapshot; no budget/version/success-receipt changes; preserve draft for explicit review.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "update-absent",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Own month absent; fresh key and current generation.",
+    "when": "PUT expectedVersion=\"1\".",
+    "then": "409 BUDGET_VERSION_CONFLICT with currentBudget=null; no budget/version/success-receipt changes.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "currency-change",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Existing RUB budget at \"7\"; expectedVersion=\"7\" and fresh key; internally consistent USD body.",
+    "when": "PUT under current generation.",
+    "then": "400 INVALID_REQUEST; immutable currency checked after matching version; no budget/version/success-receipt changes.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "version-before-currency",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Existing RUB budget at \"9\"; internally valid USD body with expectedVersion=\"8\".",
+    "when": "PUT under current generation and fresh key.",
+    "then": "409 BUDGET_VERSION_CONFLICT before immutable-currency refusal; no budget/version/success-receipt changes.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "revision-exhaustion",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Budget at \"9223372036854775807\"; fresh key, matching version/currency/generation.",
+    "when": "PUT a replacement.",
+    "then": "409 BUDGET_VERSION_EXHAUSTED; no budget/version/success-receipt changes. GET remains available; preserve draft and require operator intervention, never reset version or suggest a new-key retry.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "replay-at-limit",
+    "class": "state/security",
+    "ac": [
+      "AC06"
+    ],
+    "given": "Budget at maximum revision; matching retained successful receipt.",
+    "when": "PUT identical validated binding.",
+    "then": "Replay historical 200/201 status/body/creation Location with replay=true; no revision increment or exhaustion refusal.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "replay-identical",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Receipt retained for this exact verified owner, key and validated binding.",
+    "when": "PUT after lost confirmation.",
+    "then": "Return original committed status/body/creation Location, current generation, replay=true; no new write.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "reordered-escaped-binding",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Retained receipt for a valid JSON body.",
+    "when": "Retry with reordered objects, insignificant whitespace and equivalent escapes such as \"\\u0052UB\" for \"RUB\".",
+    "then": "Same structured binding and replay; duplicate decoded keys must be rejected first.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "changed-binding",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Retained exact key for this owner.",
+    "when": "Change month, expectedVersion, amount, currency or null to zero while keeping a valid body/current generation.",
+    "then": "409 IDEMPOTENCY_KEY_REUSED; no mutation. Keys are scoped across months.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "generation-before-replay",
+    "class": "state/security",
+    "ac": [
+      "AC08"
+    ],
+    "given": "A retained receipt exists, but the request has an old well-formed generation.",
+    "when": "PUT otherwise identical binding.",
+    "then": "409 BUDGET_RECOVERY_REQUIRED with current generation, before owner creation, receipt lookup or mutation; never replay across generation mismatch.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "independent-owners",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Two verified owners use the same ASCII key/month/body and current generation.",
+    "when": "Each owner creates its own budget.",
+    "then": "Independent operations and receipts; never reveal another owner\u2019s budget, key history or conflict snapshot.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "renewed-token",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "A successful receipt belongs to verified (iss, sub); old access token expired.",
+    "when": "Retry using a newly valid token with exactly the same verified owner and sufficient permissions.",
+    "then": "Replay allowed; token bytes, expiry and jti are not binding data.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "different-owner-retry",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Browser retains a pending operation, then another user signs in.",
+    "when": "Consider retrying the pending operation.",
+    "then": "Do not silently send as the new owner; preserve immutable operation identity and draft for explicit user review.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "concurrent-commit",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Two authenticated valid requests have the same owner/key/binding.",
+    "when": "Original commits while waiter coordinates through database uniqueness.",
+    "then": "Waiter replays the committed receipt; only one budget mutation.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "concurrent-rollback",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Same duplicate requests; original transaction rolls back.",
+    "when": "Waiter obtains the operation after rollback.",
+    "then": "Waiter may perform normal fresh checks; no durable pending receipt and no invented success.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "concurrent-timeout",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Original duplicate remains unresolved at the configurable coordination deadline, initially five seconds.",
+    "when": "Wait expires.",
+    "then": "409 SAVE_RESULT_UNAVAILABLE, saveOutcome=unknown, no second write. Original may still commit; five seconds is not an end-to-end SLA.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "historical-replay",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Receipt confirms version \"8\", while current Budget is version \"9\" and draft has newer edits.",
+    "when": "Retry exact original operation.",
+    "then": "Return historical version \"8\" success; confirm earlier operation, GET current state and retain newer draft edits.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "retention-and-deadline",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Operation first sent at T0, committed at Tc; retries occur later.",
+    "when": "Retry before T0+24h; retain receipt through at least Tc+24h.",
+    "then": "Manual retry uses unchanged pending operation; neither retry nor token refresh resets first-send deadline.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "expired-retry",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "At least 24h elapsed since first send; receipt may have been cleaned up.",
+    "when": "Recover from missing confirmation.",
+    "then": "Preserve draft, GET current state and require review/new operation/key. Receipt absence proves neither prior failure nor all historical changed-content reuse.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "digest-collision",
+    "class": "state/security",
+    "ac": [
+      "AC07"
+    ],
+    "given": "Distinct accepted ASCII keys produce the same SHA-256 index digest.",
+    "when": "Compare retained original key before using receipt.",
+    "then": "Fail closed with 500 INTERNAL_ERROR and no mutation; never treat a digest match alone as key equality.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "generation-syntax",
+    "class": "state/security",
+    "ac": [
+      "AC08"
+    ],
+    "given": "Authenticated authorized PUT with missing, malformed or repeated generation.",
+    "when": "Validate syntax before accessing current generation/owner/receipts.",
+    "then": "400 INVALID_REQUEST; no generation response header, no owner creation or mutation.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "restart",
+    "class": "state/security",
+    "ac": [
+      "AC08"
+    ],
+    "given": "Service restarts or performs compatible application rollback.",
+    "when": "Resume ordinary operations.",
+    "then": "Keep externally persisted generation and committed database state/receipts; do not initialize a new generation on each restart.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "historical-restore",
+    "class": "state/security",
+    "ac": [
+      "AC08"
+    ],
+    "given": "Budget database restored to an older snapshot.",
+    "when": "Before reopening writes, fence old writers and install a fresh external generation.",
+    "then": "Old-generation PUT refuses before owner/receipt/write even if version happens to match. Preserve drafts; GET and explicit review precede a new operation/key. Acknowledged writes/receipts within the RPO may be lost; generation does not restore them.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "get-absent",
+    "class": "state/security",
+    "ac": [
+      "AC08"
+    ],
+    "given": "Authenticated owner has no budget for month; owner mapping may not yet exist.",
+    "when": "GET own month.",
+    "then": "404 BUDGET_NOT_FOUND with month and current generation, no-store; create neither budget nor owner row.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "valid-user-profile",
+    "class": "state/security",
+    "ac": [
+      "AC09"
+    ],
+    "given": "Trusted Keycloak access JWT: exact issuer, verified nonempty sub, RS256, sole audience, principal_type=user, valid iat/exp and optional nbf.",
+    "when": "GET with budget:read or PUT with budget:read and budget:write.",
+    "then": "Owner is exact (iss, sub); no additional privileges from extra claims/scopes. Verify every request including replay before private-data access.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "invalid-token-profile",
+    "class": "state/security",
+    "ac": [
+      "AC09"
+    ],
+    "given": "Missing/invalid/expired token, wrong issuer/audience/algorithm, missing subject, ID/refresh token, invalid iat/exp/nbf or lifetime over 300 seconds (30s clock tolerance for timestamps).",
+    "when": "Request a Budget operation.",
+    "then": "401 AUTHENTICATION_REQUIRED, correct Bearer challenge, no private-data access; profile/permission validation is not proved by OpenAPI.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "insufficient-scope",
+    "class": "state/security",
+    "ac": [
+      "AC09"
+    ],
+    "given": "Otherwise valid eligible user JWT lacks an operation\u2019s required scopes.",
+    "when": "GET or PUT.",
+    "then": "403 FORBIDDEN with insufficient_scope challenge listing budget:read for GET or budget:read budget:write for PUT; no private-data access.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "machine-principal",
+    "class": "state/security",
+    "ac": [
+      "AC09"
+    ],
+    "given": "Valid JWT has missing/non-user principal_type, including client-credentials identities, even with Budget scopes.",
+    "when": "Request own-month access.",
+    "then": "403 FORBIDDEN; do not mislabel principal rejection as insufficient_scope. Email/client ID/azp never substitutes for the end-user subject.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "jwks-unavailable",
+    "class": "state/security",
+    "ac": [
+      "AC09"
+    ],
+    "given": "Token verification needs an uncached trusted key and JWKS lookup is unavailable.",
+    "when": "Authenticate request.",
+    "then": "Fail closed with 503 SERVICE_UNAVAILABLE, not 401 invalid token. An acceptable cached verification key needs no live Keycloak call.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "keycloak-issuance",
+    "class": "state/security",
+    "ac": [
+      "AC09"
+    ],
+    "given": "Future real realm/client configuration and token exchange V2.",
+    "when": "Issue/exchange delegated user tokens and attempt privilege expansion through scope/audience/principal claims.",
+    "then": "PENDING integration proof: sole audience, preserved subject, trusted account-derived principal_type, <=5 minute lifetime and effective scope downscoping; requesting scopes alone is not proof.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "bff-session",
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "given": "Missing/expired/invalid session or failed CSRF/origin check.",
+    "when": "Browser calls the BFF.",
+    "then": "401 AUTHENTICATION_REQUIRED or 403 CSRF_REJECTED with web-owned type; no forwarding. Required session-store/token-exchange outage instead returns 503 SERVICE_UNAVAILABLE and fails closed.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "bff-upstream",
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "given": "BFF receives unexpected delegated Go 401/403 or malformed upstream response.",
+    "when": "Map browser response.",
+    "then": "502 UPSTREAM_ERROR with web-owned type; forwarded PUT gets saveOutcome=unknown unless commit outcome is established. Never forward a Go authentication failure as a browser-session diagnosis.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "bff-timeout",
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "given": "PUT forwarded to Go; timeout prevents determining commit outcome.",
+    "when": "Return browser response.",
+    "then": "504 SAVE_OUTCOME_UNKNOWN with saveOutcome=unknown and no-store; no automatic retry or definite-save-failure message.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "bff-valid-response",
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "given": "Valid documented Go success/problem response.",
+    "when": "Forward to browser.",
+    "then": "Preserve status/body/type/key-generation values, generation/replay/cache headers and applicable challenges; rewrite creation Location to /api/web/v1/budgets/{month}, including creation replay. If cross-origin configured, explicitly allow/expose relevant headers.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "unknown-outcome",
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "given": "A forwarded PUT fails ambiguously, including internal or upstream failure.",
+    "when": "Construct/forward Problem Details.",
+    "then": "Require saveOutcome=unknown unless commit outcome is established; the marker may be added when needed. Its absence on any current refusal never proves that an earlier attempt with this key failed.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "problem-consumer",
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "given": "Problem producer emits documented fields; a future compatible extension reaches a consumer.",
+    "when": "Consume the problem.",
+    "then": "Match stable code/type/status; tolerate unknown problem extensions and never machine-parse detail. UI conflict review applies only to BUDGET_VERSION_CONFLICT.",
+    "verification": "NOT RUN: future runtime conformance"
+  },
+  {
+    "id": "header-identity",
+    "class": "state/security",
+    "ac": [
+      "AC04"
+    ],
+    "given": "HTTP parser has removed framing outer OWS; parsed key/generation has legal grammar.",
+    "when": "Validate logical field value and compare operation identity.",
+    "then": "Accept all grammar-valid values, including non-UUID values; names case-insensitive, values case-sensitive. Do not trim further or claim detection of framing whitespace already removed.",
+    "verification": "NOT RUN: future runtime conformance"
+  }
+]

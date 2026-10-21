@@ -1,0 +1,371 @@
+[
+  {
+    "owner": "budget",
+    "code": "INVALID_REQUEST",
+    "status": 400,
+    "title": "Invalid request",
+    "anchor": "budget-v1-invalid-request",
+    "meaning": "Invalid month, body, Money, revision, key or generation; currency change after matching version.",
+    "schema": "InvalidRequestProblem",
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request",
+      "title": "Invalid request",
+      "status": 400,
+      "code": "INVALID_REQUEST"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "AUTHENTICATION_REQUIRED",
+    "status": 401,
+    "title": "Authentication required",
+    "anchor": "budget-v1-authentication-required",
+    "meaning": "Missing, invalid or expired token, including an invalid token profile.",
+    "schema": "AuthenticationRequiredProblem",
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "FORBIDDEN",
+    "status": 403,
+    "title": "Forbidden",
+    "anchor": "budget-v1-forbidden",
+    "meaning": "Valid identity lacks the required permissions or eligible user principal type.",
+    "schema": "ForbiddenProblem",
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "Forbidden",
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "BUDGET_NOT_FOUND",
+    "status": 404,
+    "title": "Budget not found",
+    "anchor": "budget-v1-budget-not-found",
+    "meaning": "No budget for this authenticated owner and month; no budget or owner row is created.",
+    "schema": "BudgetNotFoundProblem",
+    "requiredExtensions": [
+      "month"
+    ],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found",
+      "title": "Budget not found",
+      "status": 404,
+      "code": "BUDGET_NOT_FOUND",
+      "month": "2027-01"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "BUDGET_VERSION_CONFLICT",
+    "status": 409,
+    "title": "Budget version conflict",
+    "anchor": "budget-v1-budget-version-conflict",
+    "meaning": "Expected absence or version differs from the current own budget.",
+    "schema": "BudgetVersionConflictProblem",
+    "requiredExtensions": [
+      "currentBudget"
+    ],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict",
+      "title": "Budget version conflict",
+      "status": 409,
+      "code": "BUDGET_VERSION_CONFLICT",
+      "currentBudget": null
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "IDEMPOTENCY_KEY_REUSED",
+    "status": 409,
+    "title": "Idempotency key reused",
+    "anchor": "budget-v1-idempotency-key-reused",
+    "meaning": "Retained exact key has a different validated binding.",
+    "schema": "IdempotencyKeyReusedProblem",
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-idempotency-key-reused",
+      "title": "Idempotency key reused",
+      "status": 409,
+      "code": "IDEMPOTENCY_KEY_REUSED"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "SAVE_RESULT_UNAVAILABLE",
+    "status": 409,
+    "title": "Save result unavailable",
+    "anchor": "budget-v1-save-result-unavailable",
+    "meaning": "Concurrent duplicate remains unresolved after the coordination wait; original operation may still commit.",
+    "schema": "SaveResultUnavailableProblem",
+    "requiredExtensions": [
+      "saveOutcome"
+    ],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-save-result-unavailable",
+      "title": "Save result unavailable",
+      "status": 409,
+      "code": "SAVE_RESULT_UNAVAILABLE",
+      "saveOutcome": "unknown"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "BUDGET_RECOVERY_REQUIRED",
+    "status": 409,
+    "title": "Budget recovery required",
+    "anchor": "budget-v1-budget-recovery-required",
+    "meaning": "Well-formed generation differs from current generation; refused before owner creation or receipt access.",
+    "schema": "BudgetRecoveryRequiredProblem",
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-recovery-required",
+      "title": "Budget recovery required",
+      "status": 409,
+      "code": "BUDGET_RECOVERY_REQUIRED"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "BUDGET_VERSION_EXHAUSTED",
+    "status": 409,
+    "title": "Budget version exhausted",
+    "anchor": "budget-v1-budget-version-exhausted",
+    "meaning": "A fresh update would exceed the maximum revision; operator intervention is required.",
+    "schema": "BudgetVersionExhaustedProblem",
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-exhausted",
+      "title": "Budget version exhausted",
+      "status": 409,
+      "code": "BUDGET_VERSION_EXHAUSTED"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "UNSUPPORTED_MEDIA_TYPE",
+    "status": 415,
+    "title": "Unsupported media type",
+    "anchor": "budget-v1-unsupported-media-type",
+    "meaning": "PUT requires application/json.",
+    "schema": "UnsupportedMediaTypeProblem",
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-unsupported-media-type",
+      "title": "Unsupported media type",
+      "status": 415,
+      "code": "UNSUPPORTED_MEDIA_TYPE"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "INTERNAL_ERROR",
+    "status": 500,
+    "title": "Internal error",
+    "anchor": "budget-v1-internal-error",
+    "meaning": "Unexpected internal failure; never fabricate a successful acknowledgment.",
+    "schema": "InternalErrorProblem",
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error",
+      "title": "Internal error",
+      "status": 500,
+      "code": "INTERNAL_ERROR"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "budget",
+    "code": "SERVICE_UNAVAILABLE",
+    "status": 503,
+    "title": "Service unavailable",
+    "anchor": "budget-v1-service-unavailable",
+    "meaning": "Required dependency unavailable or operator write suspension.",
+    "schema": "ServiceUnavailableProblem",
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-service-unavailable",
+      "title": "Service unavailable",
+      "status": 503,
+      "code": "SERVICE_UNAVAILABLE"
+    },
+    "class": "schema",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "web",
+    "code": "AUTHENTICATION_REQUIRED",
+    "status": 401,
+    "title": "Authentication required",
+    "anchor": "web-v1-authentication-required",
+    "meaning": "Missing, expired or invalid browser session; do not forward.",
+    "schema": null,
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#web-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "web",
+    "code": "CSRF_REJECTED",
+    "status": 403,
+    "title": "CSRF rejected",
+    "anchor": "web-v1-csrf-rejected",
+    "meaning": "CSRF or origin validation failed; do not forward.",
+    "schema": null,
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#web-v1-csrf-rejected",
+      "title": "CSRF rejected",
+      "status": 403,
+      "code": "CSRF_REJECTED"
+    },
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "web",
+    "code": "SERVICE_UNAVAILABLE",
+    "status": 503,
+    "title": "Service unavailable",
+    "anchor": "web-v1-service-unavailable",
+    "meaning": "Required session store or token exchange unavailable; fail closed.",
+    "schema": null,
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#web-v1-service-unavailable",
+      "title": "Service unavailable",
+      "status": 503,
+      "code": "SERVICE_UNAVAILABLE"
+    },
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "web",
+    "code": "UPSTREAM_ERROR",
+    "status": 502,
+    "title": "Upstream error",
+    "anchor": "web-v1-upstream-error",
+    "meaning": "Unexpected delegated Go 401/403 or malformed upstream response.",
+    "schema": null,
+    "requiredExtensions": [],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#web-v1-upstream-error",
+      "title": "Upstream error",
+      "status": 502,
+      "code": "UPSTREAM_ERROR"
+    },
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  },
+  {
+    "owner": "web",
+    "code": "SAVE_OUTCOME_UNKNOWN",
+    "status": 504,
+    "title": "Save outcome unknown",
+    "anchor": "web-v1-save-outcome-unknown",
+    "meaning": "Timeout after forwarding PUT; commit outcome is unknown.",
+    "schema": null,
+    "requiredExtensions": [
+      "saveOutcome"
+    ],
+    "example": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#web-v1-save-outcome-unknown",
+      "title": "Save outcome unknown",
+      "status": 504,
+      "code": "SAVE_OUTCOME_UNKNOWN",
+      "saveOutcome": "unknown"
+    },
+    "class": "state/security",
+    "ac": [
+      "AC10"
+    ],
+    "verification": "Catalog consistency only; runtime mapping NOT RUN."
+  }
+]

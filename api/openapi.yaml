@@ -1,0 +1,1061 @@
+# Authoritative Go wire contract; semantic rules: ../docs/api-v1-contract.md
+openapi: 3.1.1
+info:
+  title: Finance Lab Budget Service
+  version: 1.0.0
+  description: Initial Go Budget v1 contract. Contract authoring only; no runtime implementation is claimed. The
+    service owns these wire shapes; the semantic companion records BFF mapping and future conformance. All examples
+    are synthetic. API major, OpenAPI version, budget revision and backup format version are distinct.
+externalDocs:
+  description: Semantic contract, decisions, problem identifiers and validation limits
+  url: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md
+paths:
+  /api/v1/budgets/{month}:
+    get:
+      operationId: getMonthlyBudget
+      summary: Read the authenticated owner’s monthly budget
+      description: Requires budget:read. See the companion for the approved token profile and semantic conformance
+        requirements. An absent own month creates neither budget nor owner row.
+      security:
+      - BearerAuth: []
+      x-required-scopes:
+      - budget:read
+      responses:
+        '200':
+          description: Complete current Budget.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+            Budget-Generation:
+              $ref: '#/components/headers/Generation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Budget'
+              examples:
+                synthetic:
+                  value:
+                    month: 2027-01
+                    version: '1'
+                    currency: RUB
+                    income: null
+                    spending:
+                      groceries: null
+                      restaurants: null
+                      utilities: null
+                      transport: null
+                      household: null
+                      health: null
+                      personal-care: null
+                      clothing: null
+                      subscriptions: null
+                      education: null
+                      tech: null
+                      culture: null
+                      entertainment: null
+                      gifts: null
+                      travel: null
+                    investments: null
+                    totals:
+                      income:
+                        amount: '0'
+                        currency: RUB
+                      spending:
+                        amount: '0'
+                        currency: RUB
+                      investments:
+                        amount: '0'
+                        currency: RUB
+                      remaining:
+                        amount: '0'
+                        currency: RUB
+        '400':
+          description: Invalid month, body, Money, revision, key or generation; currency change after matching version.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestProblem'
+              examples:
+                INVALID_REQUEST:
+                  value: &id001
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request
+                    title: Invalid request
+                    status: 400
+                    code: INVALID_REQUEST
+        '401':
+          description: Missing, invalid or expired token, including an invalid token profile.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+            WWW-Authenticate:
+              $ref: '#/components/headers/AuthenticationChallenge'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/AuthenticationRequiredProblem'
+              examples:
+                AUTHENTICATION_REQUIRED:
+                  value: &id002
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required
+                    title: Authentication required
+                    status: 401
+                    code: AUTHENTICATION_REQUIRED
+        '403':
+          description: Valid identity lacks the required permissions or eligible user principal type.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+            WWW-Authenticate:
+              $ref: '#/components/headers/AuthorizationChallenge'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenProblem'
+              examples:
+                FORBIDDEN:
+                  value: &id003
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden
+                    title: Forbidden
+                    status: 403
+                    code: FORBIDDEN
+        '404':
+          description: No budget for this authenticated owner and month; no budget or owner row is created.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+            Budget-Generation:
+              $ref: '#/components/headers/Generation'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/BudgetNotFoundProblem'
+              examples:
+                BUDGET_NOT_FOUND:
+                  value: &id006
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found
+                    title: Budget not found
+                    status: 404
+                    code: BUDGET_NOT_FOUND
+                    month: 2027-01
+        '500':
+          description: Unexpected internal failure; never fabricate a successful acknowledgment.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorProblem'
+              examples:
+                INTERNAL_ERROR:
+                  value: &id004
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error
+                    title: Internal error
+                    status: 500
+                    code: INTERNAL_ERROR
+        '503':
+          description: Required dependency unavailable or operator write suspension.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableProblem'
+              examples:
+                SERVICE_UNAVAILABLE:
+                  value: &id005
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-service-unavailable
+                    title: Service unavailable
+                    status: 503
+                    code: SERVICE_UNAVAILABLE
+    put:
+      operationId: replaceMonthlyBudget
+      summary: Create or replace the authenticated owner’s monthly budget
+      description: Requires budget:read and budget:write. See the companion for the approved token profile and semantic
+        conformance requirements. Authenticate/authorize, validate syntax/values, check generation, resolve owner/receipt,
+        then check fresh version, currency and capacity in that order. A successful receipt wins before fresh checks.
+        Acknowledge only after atomic budget/version/receipt commit.
+      security:
+      - BearerAuth: []
+      x-required-scopes:
+      - budget:read
+      - budget:write
+      responses:
+        '200':
+          description: Committed replacement or historical update replay; accepted unchanged values still increment
+            once.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+            Budget-Generation:
+              $ref: '#/components/headers/Generation'
+            Idempotency-Replayed:
+              $ref: '#/components/headers/Replay'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Budget'
+              examples:
+                synthetic:
+                  value:
+                    month: 2027-01
+                    version: '2'
+                    currency: RUB
+                    income: null
+                    spending:
+                      groceries: null
+                      restaurants: null
+                      utilities: null
+                      transport: null
+                      household: null
+                      health: null
+                      personal-care: null
+                      clothing: null
+                      subscriptions: null
+                      education: null
+                      tech: null
+                      culture: null
+                      entertainment: null
+                      gifts: null
+                      travel: null
+                    investments: null
+                    totals:
+                      income:
+                        amount: '0'
+                        currency: RUB
+                      spending:
+                        amount: '0'
+                        currency: RUB
+                      investments:
+                        amount: '0'
+                        currency: RUB
+                      remaining:
+                        amount: '0'
+                        currency: RUB
+        '201':
+          description: Committed creation or historical creation replay.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+            Budget-Generation:
+              $ref: '#/components/headers/Generation'
+            Idempotency-Replayed:
+              $ref: '#/components/headers/Replay'
+            Location:
+              $ref: '#/components/headers/Location'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Budget'
+              examples:
+                synthetic:
+                  value:
+                    month: 2027-01
+                    version: '1'
+                    currency: RUB
+                    income: null
+                    spending:
+                      groceries: null
+                      restaurants: null
+                      utilities: null
+                      transport: null
+                      household: null
+                      health: null
+                      personal-care: null
+                      clothing: null
+                      subscriptions: null
+                      education: null
+                      tech: null
+                      culture: null
+                      entertainment: null
+                      gifts: null
+                      travel: null
+                    investments: null
+                    totals:
+                      income:
+                        amount: '0'
+                        currency: RUB
+                      spending:
+                        amount: '0'
+                        currency: RUB
+                      investments:
+                        amount: '0'
+                        currency: RUB
+                      remaining:
+                        amount: '0'
+                        currency: RUB
+        '400':
+          description: Invalid month, body, Money, revision, key or generation; currency change after matching version.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestProblem'
+              examples:
+                INVALID_REQUEST:
+                  value: *id001
+        '401':
+          description: Missing, invalid or expired token, including an invalid token profile.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+            WWW-Authenticate:
+              $ref: '#/components/headers/AuthenticationChallenge'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/AuthenticationRequiredProblem'
+              examples:
+                AUTHENTICATION_REQUIRED:
+                  value: *id002
+        '403':
+          description: Valid identity lacks the required permissions or eligible user principal type.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+            WWW-Authenticate:
+              $ref: '#/components/headers/AuthorizationChallenge'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenProblem'
+              examples:
+                FORBIDDEN:
+                  value: *id003
+        '409':
+          description: Expected absence or version differs from the current own budget. / Retained exact key has
+            a different validated binding. / Concurrent duplicate remains unresolved after the coordination wait;
+            original operation may still commit. / Well-formed generation differs from current generation; refused
+            before owner creation or receipt access. / A fresh update would exceed the maximum revision; operator
+            intervention is required.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+            Budget-Generation:
+              description: 'Required only for BUDGET_RECOVERY_REQUIRED; omitted for every other 409 code. OpenAPI
+                headers are status-level: the checker verifies this conditional matrix on response examples; runtime
+                conformance remains pending.'
+              schema:
+                $ref: '#/components/schemas/Generation'
+              x-required-for-code: BUDGET_RECOVERY_REQUIRED
+          content:
+            application/problem+json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/BudgetVersionConflictProblem'
+                - $ref: '#/components/schemas/IdempotencyKeyReusedProblem'
+                - $ref: '#/components/schemas/SaveResultUnavailableProblem'
+                - $ref: '#/components/schemas/BudgetRecoveryRequiredProblem'
+                - $ref: '#/components/schemas/BudgetVersionExhaustedProblem'
+              examples:
+                BUDGET_VERSION_CONFLICT:
+                  value: &id007
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict
+                    title: Budget version conflict
+                    status: 409
+                    code: BUDGET_VERSION_CONFLICT
+                    currentBudget: null
+                IDEMPOTENCY_KEY_REUSED:
+                  value: &id008
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-idempotency-key-reused
+                    title: Idempotency key reused
+                    status: 409
+                    code: IDEMPOTENCY_KEY_REUSED
+                SAVE_RESULT_UNAVAILABLE:
+                  value: &id009
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-save-result-unavailable
+                    title: Save result unavailable
+                    status: 409
+                    code: SAVE_RESULT_UNAVAILABLE
+                    saveOutcome: unknown
+                BUDGET_RECOVERY_REQUIRED:
+                  value: &id010
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-recovery-required
+                    title: Budget recovery required
+                    status: 409
+                    code: BUDGET_RECOVERY_REQUIRED
+                BUDGET_VERSION_EXHAUSTED:
+                  value: &id011
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-exhausted
+                    title: Budget version exhausted
+                    status: 409
+                    code: BUDGET_VERSION_EXHAUSTED
+        '415':
+          description: PUT requires application/json.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/UnsupportedMediaTypeProblem'
+              examples:
+                UNSUPPORTED_MEDIA_TYPE:
+                  value: &id012
+                    type: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-unsupported-media-type
+                    title: Unsupported media type
+                    status: 415
+                    code: UNSUPPORTED_MEDIA_TYPE
+        '500':
+          description: Unexpected internal failure; never fabricate a successful acknowledgment.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorProblem'
+              examples:
+                INTERNAL_ERROR:
+                  value: *id004
+        '503':
+          description: Required dependency unavailable or operator write suspension.
+          headers:
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableProblem'
+              examples:
+                SERVICE_UNAVAILABLE:
+                  value: *id005
+      parameters:
+      - $ref: '#/components/parameters/IdempotencyKey'
+      - $ref: '#/components/parameters/Generation'
+      requestBody:
+        required: true
+        description: Full replacement. Reject unknown/missing fields and duplicate decoded keys at every object
+          level, including escaped aliases, before parsing erases evidence. Reject malformed/trailing JSON. All
+          populated Money currencies must match the immutable budget currency; schema validation alone does not
+          prove this equality.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBudget'
+            examples:
+              unplanned:
+                value:
+                  expectedVersion: null
+                  currency: RUB
+                  income: null
+                  spending:
+                    groceries: null
+                    restaurants: null
+                    utilities: null
+                    transport: null
+                    household: null
+                    health: null
+                    personal-care: null
+                    clothing: null
+                    subscriptions: null
+                    education: null
+                    tech: null
+                    culture: null
+                    entertainment: null
+                    gifts: null
+                    travel: null
+                  investments: null
+              plannedZero:
+                value:
+                  expectedVersion: null
+                  currency: RUB
+                  income:
+                    amount: '0'
+                    currency: RUB
+                  spending:
+                    groceries: null
+                    restaurants: null
+                    utilities: null
+                    transport: null
+                    household: null
+                    health: null
+                    personal-care: null
+                    clothing: null
+                    subscriptions: null
+                    education: null
+                    tech: null
+                    culture: null
+                    entertainment: null
+                    gifts: null
+                    travel: null
+                  investments: null
+              replacement:
+                value:
+                  expectedVersion: '1'
+                  currency: RUB
+                  income: null
+                  spending:
+                    groceries: null
+                    restaurants: null
+                    utilities: null
+                    transport: null
+                    household: null
+                    health: null
+                    personal-care: null
+                    clothing: null
+                    subscriptions: null
+                    education: null
+                    tech: null
+                    culture: null
+                    entertainment: null
+                    gifts: null
+                    travel: null
+                  investments: null
+    parameters:
+    - $ref: '#/components/parameters/Month'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Exactly one Authorization: Bearer header over TLS. Keycloak-signed access JWT only; RS256; exact
+        configured trusted issuer; sole finance-lab-budget audience (string or one-element array); verified nonempty
+        (iss, sub) owner; trusted principal_type=user. Valid iat/exp, lifetime <=300 seconds, nbf if present, 30-second
+        clock tolerance. See companion for 401/403/503, JWKS, trusted issuance and delegated-scope requirements.
+        No token endpoint is exposed.'
+  parameters:
+    Month:
+      name: month
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/Month'
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      schema:
+        $ref: '#/components/schemas/IdempotencyKey'
+      description: Exactly one logical field value. Case-sensitive ASCII; reject repeats (even identical) and comma-combined
+        values. Validate the parsed value without further trimming. HTTP framing outer OWS is already removed by
+        the parser. UUIDv4 recommended, not required.
+    Generation:
+      name: Budget-Generation
+      in: header
+      required: true
+      schema:
+        $ref: '#/components/schemas/Generation'
+      description: Exactly one logical field value. Case-sensitive ASCII; reject repeats/comma lists. Missing/malformed
+        is 400; well-formed mismatch is 409 before owner resolution, receipt lookup or mutation. UUIDv4 recommended,
+        not required.
+  headers:
+    NoStore:
+      description: Required on every Budget success and problem response.
+      required: true
+      schema:
+        type: string
+        const: no-store
+    Generation:
+      description: Current recovery generation. Required here; preserved by the BFF.
+      required: true
+      schema:
+        $ref: '#/components/schemas/Generation'
+    Replay:
+      description: false for original successful PUT; true for retained successful replay. Omitted on GET and errors.
+      required: true
+      schema:
+        $ref: '#/components/schemas/ReplayMarker'
+    Location:
+      description: Original creation location, including replay. BFF rewrites to /api/web/v1/budgets/{month}.
+      required: true
+      schema:
+        type: string
+        pattern: ^/api/v1/budgets/(?!0000)[0-9]{4}-(?:0[1-9]|1[0-2])(?![\s\S])
+    AuthenticationChallenge:
+      description: 'Missing: Bearer realm="finance-lab-budget". Invalid/expired: append error="invalid_token".'
+      required: true
+      schema:
+        type: string
+        enum:
+        - Bearer realm="finance-lab-budget"
+        - Bearer realm="finance-lab-budget", error="invalid_token"
+    AuthorizationChallenge:
+      description: 'Required for insufficient scope: Bearer realm="finance-lab-budget", error="insufficient_scope",
+        scope="budget:read" for GET, or scope="budget:read budget:write" for PUT. Ineligible principals must not
+        be labeled insufficient_scope.'
+      schema:
+        type: string
+  schemas:
+    Month:
+      type: string
+      minLength: 7
+      maxLength: 7
+      pattern: ^(?!0000)[0-9]{4}-(?:0[1-9]|1[0-2])(?![\s\S])
+      description: Complete ASCII YYYY-MM; years 0001–9999 and months 01–12. No timezone conversion.
+    Currency:
+      type: string
+      enum:
+      - RUB
+      - USD
+      - EUR
+    Revision:
+      type: string
+      minLength: 1
+      maxLength: 19
+      pattern: ^(?:[1-9][0-9]{0,17}|[1-8][0-9]{18}|9[0-1][0-9]{17}|92[0-1][0-9]{16}|922[0-2][0-9]{15}|9223[0-2][0-9]{14}|92233[0-6][0-9]{13}|922337[0-1][0-9]{12}|92233720[0-2][0-9]{10}|922337203[0-5][0-9]{9}|9223372036[0-7][0-9]{8}|92233720368[0-4][0-9]{7}|922337203685[0-3][0-9]{6}|9223372036854[0-6][0-9]{5}|92233720368547[0-6][0-9]{4}|922337203685477[0-4][0-9]{3}|9223372036854775[0-7][0-9]{2}|922337203685477580[0-6]|9223372036854775807)(?![\s\S])
+      description: Canonical positive decimal string, at most 9223372036854775807. The pattern enumerates shorter
+        values and equal-length prefixes below or equal to that bound; no float conversion.
+    SourceAmount:
+      type: string
+      pattern: ^(?:0|[1-9][0-9]{0,17})(?:\.[0-9]{0,5}[1-9])?(?![\s\S])
+      description: Canonical nonnegative source amount, at most 999999999999999999.999999; no normalization.
+    TotalAmount:
+      type: string
+      pattern: ^(?:0|[1-9][0-9]{0,19})(?:\.[0-9]{0,5}[1-9])?(?![\s\S])
+      description: Canonical nonnegative total; up to 20 integer and six fractional digits.
+    RemainingAmount:
+      type: string
+      pattern: ^(?!-0(?![\s\S]))-?(?:0|[1-9][0-9]{0,19})(?:\.[0-9]{0,5}[1-9])?(?![\s\S])
+      description: Canonical signed total; up to 20 integer and six fractional digits; negative zero is forbidden.
+    IdempotencyKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+      pattern: ^[A-Za-z0-9._:-]{1,128}(?![\s\S])
+    Generation:
+      type: string
+      minLength: 1
+      maxLength: 128
+      pattern: ^[A-Za-z0-9_-]{1,128}(?![\s\S])
+    ReplayMarker:
+      type: string
+      enum:
+      - 'true'
+      - 'false'
+    Money:
+      type: object
+      additionalProperties: false
+      required:
+      - amount
+      - currency
+      properties:
+        amount:
+          $ref: '#/components/schemas/SourceAmount'
+        currency:
+          $ref: '#/components/schemas/Currency'
+    TotalMoney:
+      type: object
+      additionalProperties: false
+      required:
+      - amount
+      - currency
+      properties:
+        amount:
+          $ref: '#/components/schemas/TotalAmount'
+        currency:
+          $ref: '#/components/schemas/Currency'
+    RemainingMoney:
+      type: object
+      additionalProperties: false
+      required:
+      - amount
+      - currency
+      properties:
+        amount:
+          $ref: '#/components/schemas/RemainingAmount'
+        currency:
+          $ref: '#/components/schemas/Currency'
+    Spending:
+      type: object
+      additionalProperties: false
+      required:
+      - groceries
+      - restaurants
+      - utilities
+      - transport
+      - household
+      - health
+      - personal-care
+      - clothing
+      - subscriptions
+      - education
+      - tech
+      - culture
+      - entertainment
+      - gifts
+      - travel
+      properties:
+        groceries:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        restaurants:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        utilities:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        transport:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        household:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        health:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        personal-care:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        clothing:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        subscriptions:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        education:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        tech:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        culture:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        entertainment:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        gifts:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        travel:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+    PutBudget:
+      type: object
+      additionalProperties: false
+      required:
+      - expectedVersion
+      - currency
+      - income
+      - spending
+      - investments
+      properties:
+        expectedVersion:
+          anyOf:
+          - $ref: '#/components/schemas/Revision'
+          - type: 'null'
+        currency:
+          $ref: '#/components/schemas/Currency'
+        income:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        spending:
+          $ref: '#/components/schemas/Spending'
+        investments:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+    Totals:
+      type: object
+      additionalProperties: false
+      required:
+      - income
+      - spending
+      - investments
+      - remaining
+      properties:
+        income:
+          $ref: '#/components/schemas/TotalMoney'
+        spending:
+          $ref: '#/components/schemas/TotalMoney'
+        investments:
+          $ref: '#/components/schemas/TotalMoney'
+        remaining:
+          $ref: '#/components/schemas/RemainingMoney'
+    Budget:
+      type: object
+      additionalProperties: false
+      required:
+      - month
+      - version
+      - currency
+      - income
+      - spending
+      - investments
+      - totals
+      properties:
+        month:
+          $ref: '#/components/schemas/Month'
+        version:
+          $ref: '#/components/schemas/Revision'
+        currency:
+          $ref: '#/components/schemas/Currency'
+        income:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        spending:
+          $ref: '#/components/schemas/Spending'
+        investments:
+          anyOf:
+          - $ref: '#/components/schemas/Money'
+          - type: 'null'
+        totals:
+          $ref: '#/components/schemas/Totals'
+    ProblemBase:
+      type: object
+      required:
+      - type
+      - title
+      - status
+      - code
+      properties:
+        type:
+          type: string
+          format: uri
+        title:
+          type: string
+        status:
+          type: integer
+        code:
+          type: string
+        detail:
+          type: string
+          description: Optional sanitized explanation; never machine-parsed or populated with private data.
+        saveOutcome:
+          type: string
+          const: unknown
+          description: Required for a PUT failure whose commit outcome is not established. Absence never proves
+            an earlier attempt failed.
+    InvalidRequestProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request
+          title:
+            const: Invalid request
+          status:
+            const: 400
+          code:
+            const: INVALID_REQUEST
+      unevaluatedProperties: false
+      description: Invalid month, body, Money, revision, key or generation; currency change after matching version.
+      examples:
+      - *id001
+    AuthenticationRequiredProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required
+          title:
+            const: Authentication required
+          status:
+            const: 401
+          code:
+            const: AUTHENTICATION_REQUIRED
+      unevaluatedProperties: false
+      description: Missing, invalid or expired token, including an invalid token profile.
+      examples:
+      - *id002
+    ForbiddenProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden
+          title:
+            const: Forbidden
+          status:
+            const: 403
+          code:
+            const: FORBIDDEN
+      unevaluatedProperties: false
+      description: Valid identity lacks the required permissions or eligible user principal type.
+      examples:
+      - *id003
+    BudgetNotFoundProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found
+          title:
+            const: Budget not found
+          status:
+            const: 404
+          code:
+            const: BUDGET_NOT_FOUND
+          month:
+            $ref: '#/components/schemas/Month'
+        required:
+        - month
+      unevaluatedProperties: false
+      description: No budget for this authenticated owner and month; no budget or owner row is created.
+      examples:
+      - *id006
+    BudgetVersionConflictProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict
+          title:
+            const: Budget version conflict
+          status:
+            const: 409
+          code:
+            const: BUDGET_VERSION_CONFLICT
+          currentBudget:
+            anyOf:
+            - $ref: '#/components/schemas/Budget'
+            - type: 'null'
+        required:
+        - currentBudget
+      unevaluatedProperties: false
+      description: Expected absence or version differs from the current own budget.
+      examples:
+      - *id007
+    IdempotencyKeyReusedProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-idempotency-key-reused
+          title:
+            const: Idempotency key reused
+          status:
+            const: 409
+          code:
+            const: IDEMPOTENCY_KEY_REUSED
+      unevaluatedProperties: false
+      description: Retained exact key has a different validated binding.
+      examples:
+      - *id008
+    SaveResultUnavailableProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-save-result-unavailable
+          title:
+            const: Save result unavailable
+          status:
+            const: 409
+          code:
+            const: SAVE_RESULT_UNAVAILABLE
+        required:
+        - saveOutcome
+      unevaluatedProperties: false
+      description: Concurrent duplicate remains unresolved after the coordination wait; original operation may still
+        commit.
+      examples:
+      - *id009
+    BudgetRecoveryRequiredProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-recovery-required
+          title:
+            const: Budget recovery required
+          status:
+            const: 409
+          code:
+            const: BUDGET_RECOVERY_REQUIRED
+      unevaluatedProperties: false
+      description: Well-formed generation differs from current generation; refused before owner creation or receipt
+        access.
+      examples:
+      - *id010
+    BudgetVersionExhaustedProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-exhausted
+          title:
+            const: Budget version exhausted
+          status:
+            const: 409
+          code:
+            const: BUDGET_VERSION_EXHAUSTED
+      unevaluatedProperties: false
+      description: A fresh update would exceed the maximum revision; operator intervention is required.
+      examples:
+      - *id011
+    UnsupportedMediaTypeProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-unsupported-media-type
+          title:
+            const: Unsupported media type
+          status:
+            const: 415
+          code:
+            const: UNSUPPORTED_MEDIA_TYPE
+      unevaluatedProperties: false
+      description: PUT requires application/json.
+      examples:
+      - *id012
+    InternalErrorProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error
+          title:
+            const: Internal error
+          status:
+            const: 500
+          code:
+            const: INTERNAL_ERROR
+      unevaluatedProperties: false
+      description: Unexpected internal failure; never fabricate a successful acknowledgment.
+      examples:
+      - *id004
+    ServiceUnavailableProblem:
+      allOf:
+      - $ref: '#/components/schemas/ProblemBase'
+      - type: object
+        properties:
+          type:
+            const: https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-service-unavailable
+          title:
+            const: Service unavailable
+          status:
+            const: 503
+          code:
+            const: SERVICE_UNAVAILABLE
+      unevaluatedProperties: false
+      description: Required dependency unavailable or operator write suspension.
+      examples:
+      - *id005

@@ -1,0 +1,1303 @@
+[
+  {
+    "id": "get-200-synthetic",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Budget-Generation": "synthetic_generation_1"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "get-400-INVALID_REQUEST",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request",
+      "title": "Invalid request",
+      "status": 400,
+      "code": "INVALID_REQUEST"
+    },
+    "valid": true
+  },
+  {
+    "id": "get-401-AUTHENTICATION_REQUIRED",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "WWW-Authenticate": "Bearer realm=\"finance-lab-budget\""
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "valid": true
+  },
+  {
+    "id": "get-403-FORBIDDEN",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 403,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "WWW-Authenticate": "Bearer realm=\"finance-lab-budget\", error=\"insufficient_scope\", scope=\"budget:read\""
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "Forbidden",
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    "valid": true
+  },
+  {
+    "id": "get-404-BUDGET_NOT_FOUND",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "Budget-Generation": "synthetic_generation_1"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found",
+      "title": "Budget not found",
+      "status": 404,
+      "code": "BUDGET_NOT_FOUND",
+      "month": "2027-01"
+    },
+    "valid": true
+  },
+  {
+    "id": "get-500-INTERNAL_ERROR",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 500,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error",
+      "title": "Internal error",
+      "status": 500,
+      "code": "INTERNAL_ERROR"
+    },
+    "valid": true
+  },
+  {
+    "id": "get-503-SERVICE_UNAVAILABLE",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 503,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-service-unavailable",
+      "title": "Service unavailable",
+      "status": 503,
+      "code": "SERVICE_UNAVAILABLE"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-200-synthetic",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Budget-Generation": "synthetic_generation_1",
+      "Idempotency-Replayed": "false"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "2",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "put-201-synthetic",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Budget-Generation": "synthetic_generation_1",
+      "Idempotency-Replayed": "false",
+      "Location": "/api/v1/budgets/2027-01"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "put-400-INVALID_REQUEST",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request",
+      "title": "Invalid request",
+      "status": 400,
+      "code": "INVALID_REQUEST"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-401-AUTHENTICATION_REQUIRED",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "WWW-Authenticate": "Bearer realm=\"finance-lab-budget\""
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-403-FORBIDDEN",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 403,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "WWW-Authenticate": "Bearer realm=\"finance-lab-budget\", error=\"insufficient_scope\", scope=\"budget:read budget:write\""
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "Forbidden",
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-409-BUDGET_VERSION_CONFLICT",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 409,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict",
+      "title": "Budget version conflict",
+      "status": 409,
+      "code": "BUDGET_VERSION_CONFLICT",
+      "currentBudget": null
+    },
+    "valid": true
+  },
+  {
+    "id": "put-409-IDEMPOTENCY_KEY_REUSED",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 409,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-idempotency-key-reused",
+      "title": "Idempotency key reused",
+      "status": 409,
+      "code": "IDEMPOTENCY_KEY_REUSED"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-409-SAVE_RESULT_UNAVAILABLE",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 409,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-save-result-unavailable",
+      "title": "Save result unavailable",
+      "status": 409,
+      "code": "SAVE_RESULT_UNAVAILABLE",
+      "saveOutcome": "unknown"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-409-BUDGET_RECOVERY_REQUIRED",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 409,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "Budget-Generation": "synthetic_generation_1"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-recovery-required",
+      "title": "Budget recovery required",
+      "status": 409,
+      "code": "BUDGET_RECOVERY_REQUIRED"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-409-BUDGET_VERSION_EXHAUSTED",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 409,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-exhausted",
+      "title": "Budget version exhausted",
+      "status": 409,
+      "code": "BUDGET_VERSION_EXHAUSTED"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-415-UNSUPPORTED_MEDIA_TYPE",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 415,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-unsupported-media-type",
+      "title": "Unsupported media type",
+      "status": 415,
+      "code": "UNSUPPORTED_MEDIA_TYPE"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-500-INTERNAL_ERROR",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 500,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error",
+      "title": "Internal error",
+      "status": 500,
+      "code": "INTERNAL_ERROR"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-503-SERVICE_UNAVAILABLE",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 503,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-service-unavailable",
+      "title": "Service unavailable",
+      "status": 503,
+      "code": "SERVICE_UNAVAILABLE"
+    },
+    "valid": true
+  },
+  {
+    "id": "replay-200",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Budget-Generation": "synthetic_generation_1",
+      "Idempotency-Replayed": "true"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "2",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "replay-201",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Budget-Generation": "synthetic_generation_1",
+      "Idempotency-Replayed": "true",
+      "Location": "/api/v1/budgets/2027-01"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "id": "bad-response-get-200-synthetic-generation",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "generation"
+  },
+  {
+    "id": "bad-response-get-404-BUDGET_NOT_FOUND-generation",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-not-found",
+      "title": "Budget not found",
+      "status": 404,
+      "code": "BUDGET_NOT_FOUND",
+      "month": "2027-01"
+    },
+    "valid": false,
+    "expectedError": "generation"
+  },
+  {
+    "id": "bad-response-put-409-BUDGET_RECOVERY_REQUIRED-generation",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 409,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-recovery-required",
+      "title": "Budget recovery required",
+      "status": 409,
+      "code": "BUDGET_RECOVERY_REQUIRED"
+    },
+    "valid": false,
+    "expectedError": "generation"
+  },
+  {
+    "id": "bad-response-put-409-BUDGET_VERSION_CONFLICT-generation",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 409,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "Budget-Generation": "unexpected"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-budget-version-conflict",
+      "title": "Budget version conflict",
+      "status": 409,
+      "code": "BUDGET_VERSION_CONFLICT",
+      "currentBudget": null
+    },
+    "valid": false,
+    "expectedError": "generation"
+  },
+  {
+    "id": "bad-response-get-200-synthetic-replay",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Budget-Generation": "synthetic_generation_1",
+      "Idempotency-Replayed": "false"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "replay"
+  },
+  {
+    "id": "bad-response-put-200-synthetic-replay",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Budget-Generation": "synthetic_generation_1"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "2",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "replay"
+  },
+  {
+    "id": "bad-response-put-400-INVALID_REQUEST-replay",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "Idempotency-Replayed": "true"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-invalid-request",
+      "title": "Invalid request",
+      "status": 400,
+      "code": "INVALID_REQUEST"
+    },
+    "valid": false,
+    "expectedError": "replay"
+  },
+  {
+    "id": "bad-response-put-201-synthetic-location",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Budget-Generation": "synthetic_generation_1",
+      "Idempotency-Replayed": "false"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "location"
+  },
+  {
+    "id": "bad-response-get-200-synthetic-cache",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "public",
+      "Content-Type": "application/json",
+      "Budget-Generation": "synthetic_generation_1"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "cache"
+  },
+  {
+    "id": "bad-response-get-401-AUTHENTICATION_REQUIRED-challenge",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "valid": false,
+    "expectedError": "challenge"
+  },
+  {
+    "id": "bad-response-put-403-FORBIDDEN-challenge",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 403,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "WWW-Authenticate": "Bearer realm=\"finance-lab-budget\", error=\"insufficient_scope\", scope=\"budget:read\""
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "Forbidden",
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    "valid": false,
+    "expectedError": "challenge"
+  },
+  {
+    "id": "bad-response-get-200-synthetic-media",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "text/plain",
+      "Budget-Generation": "synthetic_generation_1"
+    },
+    "body": {
+      "month": "2027-01",
+      "version": "1",
+      "currency": "RUB",
+      "income": null,
+      "spending": {
+        "groceries": null,
+        "restaurants": null,
+        "utilities": null,
+        "transport": null,
+        "household": null,
+        "health": null,
+        "personal-care": null,
+        "clothing": null,
+        "subscriptions": null,
+        "education": null,
+        "tech": null,
+        "culture": null,
+        "entertainment": null,
+        "gifts": null,
+        "travel": null
+      },
+      "investments": null,
+      "totals": {
+        "income": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "spending": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "investments": {
+          "amount": "0",
+          "currency": "RUB"
+        },
+        "remaining": {
+          "amount": "0",
+          "currency": "RUB"
+        }
+      }
+    },
+    "valid": false,
+    "expectedError": "media"
+  },
+  {
+    "id": "get-invalid-token",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "WWW-Authenticate": "Bearer realm=\"finance-lab-budget\", error=\"invalid_token\""
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "valid": true
+  },
+  {
+    "id": "get-ineligible-principal",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "get",
+    "status": 403,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "Forbidden",
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-invalid-token",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json",
+      "WWW-Authenticate": "Bearer realm=\"finance-lab-budget\", error=\"invalid_token\""
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-authentication-required",
+      "title": "Authentication required",
+      "status": 401,
+      "code": "AUTHENTICATION_REQUIRED"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-ineligible-principal",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 403,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-forbidden",
+      "title": "Forbidden",
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    "valid": true
+  },
+  {
+    "id": "put-ambiguous-internal",
+    "class": "schema",
+    "ac": [
+      "AC02",
+      "AC08",
+      "AC10"
+    ],
+    "method": "put",
+    "status": 500,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/problem+json"
+    },
+    "body": {
+      "type": "https://github.com/finance-lab-project/budget-service/blob/main/docs/api-v1-contract.md#budget-v1-internal-error",
+      "title": "Internal error",
+      "status": 500,
+      "code": "INTERNAL_ERROR",
+      "saveOutcome": "unknown"
+    },
+    "valid": true
+  }
+]
