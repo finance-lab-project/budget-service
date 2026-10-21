@@ -6,7 +6,8 @@ roles provisioned explicitly below. The initial migration described by the
 [storage mapping](storage.md) is now **applied locally at version 1**, with step 5
 lifecycle verification and step 6 constraint/permission checks complete. Step 7
 adds a focused CI workflow and verifies its database sequence locally. No legacy
-data transfer is included; hosted GitHub Actions results remain pending.
+data transfer is included. Hosted GitHub Actions and review status are tracked on
+[draft PR #6](https://github.com/finance-lab-project/budget-service/pull/6).
 
 ## PostgreSQL
 

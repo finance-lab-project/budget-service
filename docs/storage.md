@@ -5,7 +5,8 @@ revision 1, was **applied to the isolated local database in step 5**. Version,
 no-op and transactional rollback checks passed. Step 6 local constraint and
 application-object privilege checks also passed. Step 7 adds the focused CI job;
 its database sequence, Go tests and contract validator passed locally. Hosted CI
-and delivery remain pending. This document follows the accepted
+and review status are tracked on [draft PR #6](https://github.com/finance-lab-project/budget-service/pull/6);
+maintainer acceptance remains pending. This document follows the accepted
 [OpenAPI](../api/openapi.yaml), [semantic contract](api-v1-contract.md) and
 `internal/budget` domain at baseline `8268021eb2c42a398a5a4ad377919a5de8257878`.
 
@@ -384,3 +385,28 @@ must execute after publication, and its authoritative check result must be
 inspected then. No hosted run, PR, deployment or step 8 acceptance work was
 started. Runtime adapter/auth/concurrency/replay and retention/recovery behavior
 remain outside these checks.
+
+
+## Draft delivery review (step 8)
+
+[Draft PR #6](https://github.com/finance-lab-project/budget-service/pull/6)
+publishes the implementation for issue #5. Implementer review against issue
+revision 1 found no in-scope blockers in the migration, storage mapping, grants,
+verification scripts or workflow. This is not an independent review or maintainer
+acceptance, and the PR remains draft and unmerged.
+
+The implementation and locally verified artifacts are committed in
+[ba8ce45](https://github.com/finance-lab-project/budget-service/commit/ba8ce45d4f35e1aab56b474544f7bcd66538859e).
+This delivery note does not change those SQL/tooling artifacts. The migration
+checksum recorded in step 5 and the frozen contract artifact hashes are preserved.
+See the PR's verification section and GitHub Actions checks for completed hosted
+results tied to the delivered revision. The contract workflow is dispatched
+explicitly on the PR branch because its unchanged path filters exclude these
+storage-only changes.
+
+The internal owner ID identifies a storage row; a digest hit still requires
+comparison of both original identity byte strings by the future repository.
+Unconstrained NUMERIC checks validate the original value without rounding it
+into range. JSONB stores structural request bindings while JSON retains the
+historical response text. A NULL receipt deadline protects an unanchored receipt;
+post-commit anchoring and replay/cleanup behavior remain later runtime work.
