@@ -15,6 +15,10 @@ creates objects in the dedicated Budget database's existing `public` schema.
 Start from an empty database: there is no legacy transfer, import, backfill or
 upgrade from an old Finance Lab database.
 
+The [Go PostgreSQL adapter guide](postgres-adapter.md) documents the current
+owner lookup and monthly read API, exact decoding, errors, and unit/integration
+test commands for [issue #7](https://github.com/finance-lab-project/budget-service/issues/7).
+
 ## Versions and prerequisites
 
 - PostgreSQL 18.6, `postgres:18.6-bookworm`, pinned to image index digest
