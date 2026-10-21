@@ -1,0 +1,76 @@
+name: Budget PostgreSQL storage
+
+on:
+  pull_request:
+    paths:
+      - 'migrations/**'
+      - 'scripts/local-postgres/**'
+      - 'compose.yaml'
+      - 'go.mod'
+      - 'go.sum'
+      - 'internal/**'
+      - 'docs/storage.md'
+      - 'docs/local-postgres.md'
+      - '.github/workflows/storage.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'migrations/**'
+      - 'scripts/local-postgres/**'
+      - 'compose.yaml'
+      - 'go.mod'
+      - 'go.sum'
+      - 'internal/**'
+      - 'docs/storage.md'
+      - 'docs/local-postgres.md'
+      - '.github/workflows/storage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  storage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      COMPOSE_PROJECT_NAME: budget-service-ci-${{ github.run_id }}-${{ github.run_attempt }}
+      BUDGET_POSTGRES_PORT: '55433'
+      GOTOOLCHAIN: go1.27.3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
+        with:
+          go-version-file: go.mod
+          cache: false
+      - name: Test Go domain
+        run: |
+          go version
+          go test -count=1 ./...
+          go vet ./...
+      - name: Install pinned Goose CLI
+        env:
+          GOBIN: ${{ github.workspace }}/.tools/bin
+        run: |
+          go install github.com/pressly/goose/v3/cmd/goose@v3.29.0
+          .tools/bin/goose -version
+      - name: Start isolated PostgreSQL 18.6
+        run: |
+          docker compose config --quiet
+          docker compose up -d --wait --wait-timeout 90 postgres
+      - name: Provision and verify separate roles
+        run: |
+          docker compose exec -T postgres psql -X -v ON_ERROR_STOP=1 -U budget_local -d budget_local < scripts/local-postgres/bootstrap-roles.sql
+          scripts/local-postgres/check-roles.sh
+      - name: Verify migration lifecycle
+        run: scripts/local-postgres/check-migration-lifecycle.sh
+      - name: Verify constraints and runtime permissions
+        run: scripts/local-postgres/check-schema.sh
+      - name: PostgreSQL diagnostics on failure
+        if: failure()
+        run: docker compose logs --no-color postgres
+      - name: Remove disposable CI database
+        if: always()
+        run: docker compose down --volumes
