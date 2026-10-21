@@ -233,7 +233,10 @@ permissions and a 20-minute job timeout. The existing
 
 The job runs Go tests/vet, installs the separate Goose CLI, starts a fresh
 Compose project, bootstraps roles, and executes the role, migration lifecycle
-and schema checkers above. Startup waits for health; a missing database fails
+and schema checkers above, followed by the explicitly selected Go adapter
+integration tests. Adapter fixtures are inserted only after schema checks finish;
+setup uses `budget_migrator` and adapter reads use `budget_runtime`.
+Startup waits for health; a missing database fails
 the check. Failure logs are printed and `always()` cleanup removes only the
 job's disposable Compose project and volume. The workflow does not deploy or
 run migrations from application startup.
@@ -243,8 +246,10 @@ run migrations from application startup.
 55432 for the existing local setup. CI uses 55433. The lifecycle checker uses
 the selected port for Goose as well as the Compose target check.
 
-For a local reproduction with the pinned Goose CLI installed, choose an unused
-project name and free port, then run this sequence from the repository root:
+For the complete adapter integration sequence, see the
+[adapter test guide](postgres-adapter.md#disposable-integration-run).
+To reproduce the schema portion with the pinned Goose CLI installed, choose an
+unused project name and free port, then run this sequence from the repository root:
 
 ```sh
 (

@@ -11,6 +11,7 @@ on:
       - 'internal/**'
       - 'docs/storage.md'
       - 'docs/local-postgres.md'
+      - 'docs/postgres-adapter.md'
       - '.github/workflows/storage.yml'
   push:
     branches: [main]
@@ -23,6 +24,7 @@ on:
       - 'internal/**'
       - 'docs/storage.md'
       - 'docs/local-postgres.md'
+      - 'docs/postgres-adapter.md'
       - '.github/workflows/storage.yml'
   workflow_dispatch:
 
@@ -45,7 +47,7 @@ jobs:
         with:
           go-version-file: go.mod
           cache: false
-      - name: Test Go domain
+      - name: Test Go domain and adapter units
         run: |
           go version
           go test -count=1 ./...
@@ -68,6 +70,13 @@ jobs:
         run: scripts/local-postgres/check-migration-lifecycle.sh
       - name: Verify constraints and runtime permissions
         run: scripts/local-postgres/check-schema.sh
+      - name: Test PostgreSQL adapter
+        env:
+          BUDGET_TEST_DISPOSABLE_DATABASE: budget_local
+        run: |
+          export BUDGET_TEST_SETUP_DSN="host=127.0.0.1 port=$BUDGET_POSTGRES_PORT dbname=budget_local user=budget_migrator password=budget-migrator-local-only sslmode=disable connect_timeout=3"
+          export BUDGET_TEST_RUNTIME_DSN="host=127.0.0.1 port=$BUDGET_POSTGRES_PORT dbname=budget_local user=budget_runtime password=budget-runtime-local-only sslmode=disable connect_timeout=3"
+          go test -tags=integration -count=1 -timeout=60s ./internal/postgres
       - name: PostgreSQL diagnostics on failure
         if: failure()
         run: docker compose logs --no-color postgres
