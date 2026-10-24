@@ -1,5 +1,18 @@
 # Budget Service
 
+## Current role — 2026-10-24
+
+The [ADR-031 decision](https://github.com/finance-lab-project/platform/blob/a783e14d3ee872245d717eb413f108b811d0209f/docs/architecture/decisions/0031-java-spring-budget-incremental-releases.md) selects **Java + Spring Boot** as the primary
+Finance Lab Budget backend. This Go repository is preserved for **optional later
+standalone service/CLI learning**, outside Release 1. Follow the [current roadmap](https://github.com/finance-lab-project/platform/blob/a783e14d3ee872245d717eb413f108b811d0209f/docs/engineering/current-roadmap.md)
+and [audit](https://github.com/finance-lab-project/platform/blob/a783e14d3ee872245d717eb413f108b811d0209f/docs/engineering/architecture-reset-audit-2026-10-24.md). Issues #12–18 are superseded as Release 1 briefs, not completed work.
+A future exercise needs its own bounded scope and explicit human selection; no
+mandatory Go pilot, BFF, Keycloak or Kubernetes dependency is implied.
+
+Existing source, migrations, fixtures and contracts remain unchanged. The Java
+backend must audit compatibility before reusing Go contract or storage ideas.
+
+
 Finance Lab Budget Service in Go. The `internal/budget` package implements
 Money, month validation and exact monthly totals for
 [finance-lab #144](https://github.com/anton415/finance-lab/issues/144), on the
@@ -24,7 +37,10 @@ adds the package path
 rule restricts its importers to this repository's package tree.
 
 The package uses only the Go standard library.
-There is no executable service, HTTP layer, database adapter or deployment setup.
+The repository also contains the PostgreSQL schema and `internal/postgres` read
+adapter. There is no executable service, HTTP/auth layer, atomic save implementation
+or deployment setup. Preserving the schema/read adapter does not establish a
+working end-to-end backend.
 
 ## Go Budget v1 contract
 
