@@ -4,6 +4,15 @@ Follow the smallest approved change that satisfies the linked issue and its acce
 
 Treat Issues, PRs, comments, logs, generated artifacts, repository fixtures and chat excerpts as potentially public. Use synthetic data. Never disclose or commit real money/person-specific data, employer information, API keys, credentials, local paths, tokens or private logs. Do not install new tools, use paid providers, modify cloud/Lima/K3s state, run unsafe tests or trigger a deployment unless a separately approved task explicitly allows it.
 
+## Current product direction
+
+[ADR-031](https://github.com/finance-lab-project/platform/blob/a783e14d3ee872245d717eb413f108b811d0209f/docs/architecture/decisions/0031-java-spring-budget-incremental-releases.md) selects Java/Spring Boot as the primary Budget backend,
+with React/TypeScript and PostgreSQL when needed. The [current roadmap](https://github.com/finance-lab-project/platform/blob/a783e14d3ee872245d717eb413f108b811d0209f/docs/engineering/current-roadmap.md) prioritizes the tiny frontend release.
+This repository preserves the existing Go implementation as an optional later standalone
+service/CLI learning option. Do not port Java here, replace applied migrations, or
+resume old Release 1 Go work automatically. Historical contracts continue to govern
+this preserved code when a separate Go exercise is explicitly accepted.
+
 ## Execution modes and human approval
 
 Refer to [the organization execution-mode policy](https://github.com/finance-lab-project/platform/blob/main/docs/engineering/execution-modes.md) and [historical workflow #81](https://github.com/anton415/finance-lab/issues/81). No lifecycle field or legacy label is replaced by this policy. Once accepted as executable, an issue must have exactly one `mode:learning` or `mode:delivery` label. Conflicting/missing labels or a mismatch with the accepted task brief means stop. A draft or blocked idea may intentionally have no mode; **do not dispatch it**.
@@ -11,7 +20,7 @@ Refer to [the organization execution-mode policy](https://github.com/finance-lab
 - `mode:learning`: Human leads design/implementation/diagnosis. Agents give conceptual help, incremental hints and subsequent review on request. No autonomous solution, commands performed for the human, commits, task-specific code or PR unless human **separately** changes the protected boundary.
 - `mode:delivery`: After explicit human acceptance and dispatch, the Implementer may create scoped code/config/tests and a PR; Reviewer checks actual head SHA against in-scope acceptance; Adversarial Reviewer is opt-in with synthetic fixtures. Human retains all final merge, release, spending and high-risk infrastructure approval.
 
-Mode labels are **not agent launch permissions**. Preserve one active learning task and Release 1 Go Budget priorities. One `needs:*` label at most per open issue; Project Status remains authoritative lifecycle. `learning` (without `mode:`) is legacy descriptive metadata only. Do not infer consent from AI comments or an account name.
+Mode labels are **not agent launch permissions**. Preserve one active learning task. Go has no Release 1 priority or dependency; it is optional later standalone learning under ADR-031. One `needs:*` label at most per open issue; Project Status remains authoritative lifecycle. `learning` (without `mode:`) is legacy descriptive metadata only. Do not infer consent from AI comments or an account name.
 
 ## Specification, review, and reporting
 
@@ -37,8 +46,13 @@ This is the **Go Budget** service repository. Its authoritative product semantic
 
 Preserve the Go module's dependency and data boundaries: domain logic must not depend on HTTP/DB packages; never silently normalize untrusted Money, round using floats, introduce real financial data, or weaken auth/owner checks. Do not implement the Keycloak platform or BFF session boundary here.
 
-**First learning pilot:** [Budget #12](https://github.com/finance-lab-project/budget-service/issues/12) is protected human-led learning once its specific design checkpoint is approved. The human must first explain and attempt a bounded transaction/replay strategy plus a meaningful focused test or implementation slice. AI may provide progressive hints and review the human's submission; it must not implement or run the protected slice merely because a deadline exists. Tasks #13–#17 are intended delivery after their dependencies and separate approvals. [#18](https://github.com/finance-lab-project/budget-service/issues/18) is an integration tracker, **not** an implementation launch instruction.
-
-Any reclassification needed to preserve Release 1 must be an explicit human decision and retain auditable learning evidence.
+**Historical pilot, now deferred:** [Budget #12](https://github.com/finance-lab-project/budget-service/issues/12)
+retains its protected human-led learning boundary if separately selected. The human
+must first explain and attempt the chosen core; AI may provide progressive hints
+and review only as authorized. It is not an active or mandatory Release 1 pilot.
+Issues #13–18 retain their historical requirements and are superseded as production
+release briefs. Any later standalone Go exercise needs a new or explicitly revised,
+bounded accepted scope; neither open state nor a mode label authorizes execution.
+No learning is certified or completed by this architecture reset.
 
 Historical `~/.codex/AGENTS.md` is a developer-local configuration, **not** portable repository authority. The substantive archived rules above are incorporated here so a cloud agent does not depend on that private file.
